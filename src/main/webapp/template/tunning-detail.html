@@ -1,0 +1,36 @@
+
+<div data-role="header">
+	<h1><%=description%></h1>
+	<a id="back" href="#main" data-transition="slide" data-role="button"
+		data-theme="d" data-icon="arrow-l">Back</a>
+</div>
+<!-- /header -->
+
+<div data-role="content">
+
+	<table border="0">
+		<%  
+		    list = notes.split(",");
+		    for (i = 0;i < list.length;i=i+1)   
+		    { 
+		       audioFile = "audio/"+list[i]+"-"+i+".mp3";
+		    
+		    %>
+		
+		<tr>
+			<td>
+				<h2><%=list[i].toUpperCase()%>-</h2>
+			</td>
+			<td><audio controls="controls">
+					<source src="<%=audioFile%>" type="audio/mp3" />
+					Your browser does not support this audio format.
+				</audio></td>
+		 </tr>
+		<% } %> 
+
+
+	</table>
+
+
+</div>
+
