@@ -1,0 +1,124 @@
+
+<script src="libs/jquery-1.7.2.js"/> 
+ <script>
+
+   var img = null;
+ 
+	$(document).ready(function() {
+		
+	    img = new Image();
+		img.src = "fret.jpg";
+		img.onload = fretImageLoaded;
+
+	});
+   
+	
+	   function fretImageLoaded() {
+	    	
+
+			var canvas = $("#canvas")[0];
+			var ctx = canvas.getContext("2d");
+				
+			var imgWidth=img.width * .20;
+	        var imgHeight=img.height * .20;
+	         ctx.canvas.width= imgWidth;
+	         ctx.canvas.height=imgHeight;
+		     ctx.drawImage(img,0,0,imgWidth,imgHeight);
+		
+		     ctx.fillStyle = "red";
+		     ctx.font = "bold 24px Arial";
+		    
+		     
+		     var notes = "<%=notes%>";
+		     var list = notes.split(","); 
+		     
+		     var strings = [15,57,101,145,188,233];
+		     
+		     for (i = 0;i < strings.length;i++) {
+			     ctx.fillText(list[i].toUpperCase(), strings[i],150);
+			 }
+		     
+		     
+		     $("#canvas").click(function(e) {
+	 	         var offsetX = e.pageX - $(this).position().left;
+	 	         var offsetY = e.pageY - $(this).position().top;
+	 	         
+	 	         for (i = 0;i < list.length;i=i+1) {  
+	 	            var point = strings[i];   	
+	 	        	if (offsetX >= point-5 && offsetX <= point + 10 ) {
+	 					playString(i);
+	 	           }
+	 	        }	
+	 				
+	 	     });
+		     
+			
+	    } 
+	     
+		     
+	
+	
+	
+   
+   function playString(s) {
+	  
+	   var id = "#audio"+s;
+	   var a = $(id)[0];
+	   a.play();
+ 
+	   
+   }
+		
+ 
+</script>
+
+ 
+
+<div data-role="header">
+	<h1><%=description%></h1>
+	<a id="back" href="#main" data-transition="slide" data-role="button"
+		data-theme="d" data-icon="arrow-l">Back</a>
+		
+		
+</div>
+<!-- /header -->
+
+<div style="background: black" data-role="content">
+
+
+<div style="width: 100%; text-align:center">
+	<canvas id="canvas" style="display:inline;"> 
+	</canvas>
+</div>
+	
+
+	<table border="0">
+		<%  
+		    list = notes.split(",");
+		    for (i = 0;i < list.length;i=i+1)   
+		    { 
+		       audioFile = "audio/"+list[i]+"-"+i+".mp3";
+		       audioId = "audio"+i;
+		    %>
+		
+		
+		
+		<audio id="<%=audioId%>">
+					<source src="<%=audioFile%>" type="audio/mp3" />
+					Your browser does not support this audio format.
+		</audio>
+		
+		
+	
+		<% } %> 
+
+
+
+</div>
+
+
+
+
+
+
+
