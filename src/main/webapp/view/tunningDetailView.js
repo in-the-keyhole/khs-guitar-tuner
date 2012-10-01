@@ -2,7 +2,7 @@ define([
 	'jquery', 
 	'backbone', 
 	'underscore', 
-	'text!template/tunning-detail.html'
+	'text!template/tunning-detail-image.html'
 	
 	], 
 	function($, Backbone, _, template) {
@@ -19,12 +19,17 @@ define([
 		        	e.stopPropagation();
 					return false;
 				});
-			  
 				
+				$("content").bind("swipe", function() { window.tunnings.routers.workspaceRouter.navigate("#index",true); });
+				
+				
+				
+			
 			},
 		
 			events: {
-			      "click #back" : "back"
+			      "click #back" : "back",
+	
 			
 			    },
 			
@@ -32,18 +37,20 @@ define([
 			  		window.tunnings.routers.workspaceRouter.navigate("#index",true);
 			    	return false;
 			},
-			    
+			
   
 			render : function(eventName) {
-			
+				
 				var compiled_template = _.template(template);
 				var $el = $(this.el);	
 				$el.html(compiled_template(this.model.toJSON()) );								
-				return this;
 			
-						
+				
 				return this;
 			},
 		});
 
 });
+
+
+
