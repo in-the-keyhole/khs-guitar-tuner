@@ -20,9 +20,8 @@ define([
 					return false;
 				});
 				
-				$("content").bind("swipe", function() { window.tunnings.routers.workspaceRouter.navigate("#index",true); });
-				
-				
+				$("content").bind("swipeleft", function() { window.tunnings.routers.workspaceRouter.navigate("#index",true); });
+			
 				
 			
 			},

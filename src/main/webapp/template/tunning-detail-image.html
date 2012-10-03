@@ -3,11 +3,12 @@
  <script>
 
    var img = null;
+   var stringPlaying = -1;
  
 	$(document).ready(function() {
 		
 	    img = new Image();
-		img.src = "fret.jpg";
+		img.src = "fret2.png";
 		img.onload = fretImageLoaded;
 
 	});
@@ -18,24 +19,33 @@
 
 			var canvas = $("#canvas")[0];
 			var ctx = canvas.getContext("2d");
-				
-			var imgWidth=img.width * .20;
-	        var imgHeight=img.height * .20;
+		
+			var ratio = 1.0;
+			
+			var imgWidth=img.width * ratio;
+	        var imgHeight=img.height * ratio;
 	         ctx.canvas.width= imgWidth;
 	         ctx.canvas.height=imgHeight;
 		     ctx.drawImage(img,0,0,imgWidth,imgHeight);
 		
-		     ctx.fillStyle = "red";
+		   
 		     ctx.font = "bold 24px Arial";
 		    
 		     
 		     var notes = "<%=notes%>";
 		     var list = notes.split(","); 
 		     
-		     var strings = [15,57,101,145,188,233];
+		     var strings = [15,46,78,110,142,175];
+		     
 		     
 		     for (i = 0;i < strings.length;i++) {
-			     ctx.fillText(list[i].toUpperCase(), strings[i],150);
+		    	 var x = strings[i]-9;
+		    	 var y = 150 - 24;
+		    	 ctx.fillStyle = "green";		    	
+				 ctx.fillRect(x-5,y,27,30);
+				 stringLabel(list[i].toUpperCase(),strings[i],"white",ctx);
+				 //ctx.fillStyle = "red";
+		    	 //ctx.fillText(list[i].toUpperCase(), strings[i]-9,150);
 			 }
 		     
 		     
@@ -43,10 +53,20 @@
 	 	         var offsetX = e.pageX - $(this).position().left;
 	 	         var offsetY = e.pageY - $(this).position().top;
 	 	         
+	 
 	 	         for (i = 0;i < list.length;i=i+1) {  
 	 	            var point = strings[i];   	
 	 	        	if (offsetX >= point-5 && offsetX <= point + 20 ) {
-	 					playString(i);
+	 	        		
+	 	        		if (stringPlaying == i) {
+	 	        		 stringLabel(list[i].toUpperCase(),strings[i],"white",ctx);		
+	 	        		 stopPlay(stringPlaying);
+	 	        		 stringPlaying = -1;
+	 	        		} else {
+	 	        			stringLabel(list[i].toUpperCase(),strings[i],"red",ctx);
+	 	        			playString(i);
+	 	        		 
+	 	        	   }
 	 	           }
 	 	        }	
 	 				
@@ -55,25 +75,42 @@
 			
 	    } 
 	     
-		     
-	
-	
-	
-   
+	   
+	   
+  function stringLabel(s,loc,color,ctx) {  
+		 var x = loc-9;
+    	 ctx.fillStyle = color;		    			
+    	 ctx.fillText(s.toUpperCase(), x,150);	  
+  }	   
+	   
+	   
    function playString(s) {
 	  
 	   var id = "#audio"+s;
 	   var a = $(id)[0];
 	   a.play();
- 
-	   
+	   stringPlaying = s;
    }
+   
+   
+   function stopPlay(s) {
+		  
+	   var id = "#audio"+s;
+	   var a = $(id)[0];
+	   a.pause();	   
+   }
+   
 		
  
 </script>
 
+<style type="text/css">
+#map{
+width:100%;
+height:100%;
+}
+</style>
  
-
 <div data-role="header">
 	<h1><%=description%></h1>
 	<a id="back" href="#main" data-transition="slide" data-role="button"
@@ -83,16 +120,15 @@
 </div>
 <!-- /header -->
 
-<div style="background: black" data-role="content">
+<div style="background: black;width:100%;height:100%;overflow:hidden;" data-role="content">
 
 
-<div style="width: 100%; text-align:center">
-	<canvas id="canvas" style="display:inline;"> 
+<div style="text-align:center;width:100%;height:100%;overflow:hidden;">
+	<canvas id="canvas" style="display:inline;" width="180" height="240"> 
 	</canvas>
-</div>
+
 	
 
-	<table border="0">
 		<%  
 		    list = notes.split(",");
 		    for (i = 0;i < list.length;i=i+1)   
@@ -103,7 +139,7 @@
 		
 		
 		
-		<audio id="<%=audioId%>">
+		<audio id="<%=audioId%>" loop="loop">
 					<source src="<%=audioFile%>" type="audio/mp3" />
 					Your browser does not support this audio format.
 		</audio>
@@ -112,6 +148,7 @@
 	
 		<% } %> 
 
+</div>
 
 
 </div>
