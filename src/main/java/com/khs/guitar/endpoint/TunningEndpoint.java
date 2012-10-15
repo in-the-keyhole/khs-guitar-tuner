@@ -27,8 +27,7 @@ public class TunningEndpoint {
 		tunning.notes = "e,a,d,g,b,e";
 		tunning.url = "open.wav";
 		results.add(tunning);
-			
-		
+					
 		tunning = new Tunning();
 		tunning.id = System.currentTimeMillis();
 		tunning.description = "DROP D";
@@ -46,11 +45,33 @@ public class TunningEndpoint {
 		
 		tunning = new Tunning();
 		tunning.id = System.currentTimeMillis();
+		tunning.description = "Half Step Down";
+		tunning.notes = "d#,g#,c#,f#,a#,d#";
+		tunning.url = "open.wav";
+		results.add(tunning);
+
+		
+		tunning = new Tunning();
+		tunning.id = System.currentTimeMillis();
+		tunning.description = "Whole Step Down";
+		tunning.notes = "d,g,c,f,a,d";
+		tunning.url = "open.wav";
+		results.add(tunning);
+		
+		tunning = new Tunning();
+		tunning.id = System.currentTimeMillis();
 		tunning.description = "OPEN C";
 		tunning.notes = "c,g,c,g,c,e";
 		tunning.url = "open.wav";
 		results.add(tunning);
 		
+		tunning = new Tunning();
+		tunning.id = System.currentTimeMillis();
+		tunning.description = "OPEN D";
+		tunning.notes = "d,a,d,f#,a,d";
+		tunning.url = "open.wav";
+		results.add(tunning);
+
 		
 		tunning = new Tunning();
 		tunning.id = System.currentTimeMillis();
@@ -65,7 +86,7 @@ public class TunningEndpoint {
 		return results;
 	}
 	
-	
+
 	
 	
 

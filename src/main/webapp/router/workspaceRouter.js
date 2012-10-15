@@ -51,13 +51,20 @@ define(['jquery', 'backbone', 'jquerymobile' ], function($, Backbone) {
 					'data-add-back-btn' : "false"
 				});
 				
+		
 				page.render();
 				
 				$(page.el).prependTo($('body'));
 				
 				$.mobile.changePage($(page.el), {
 					transition : 'flip'
-				});										
+												
+						
+				});	
+				
+				
+				
+				
 		     });				
 		},	
 		

@@ -8,7 +8,7 @@
 	$(document).ready(function() {
 		
 	    img = new Image();
-		img.src = "fret2.png";
+		img.src = "fret2.jpg";
 		img.onload = fretImageLoaded;
 
 	});
@@ -20,7 +20,7 @@
 			var canvas = $("#canvas")[0];
 			var ctx = canvas.getContext("2d");
 		
-			var ratio = 1.5;
+			var ratio = 1.0;
 			
 			var imgWidth=img.width * ratio;
 	        var imgHeight=img.height * ratio;
@@ -31,22 +31,15 @@
 		   
 		     ctx.font = "bold 32px Arial";
 		    
-		     
 		     var notes = "<%=notes%>";
 		     var list = notes.split(","); 
 		     
-		     var strings = [11,56,107,154,203,248];
-		    
+		     var strings = [26,63,102,138,174,212];
 		     
 		     for (i = 0;i < strings.length;i++) {
 		    	 var x = strings[i]-9;
 		    	 var y = 150 - 32;
 		    	 ctx.fillStyle = "green";		    	
-				 //ctx.fillRect(x-5,y,35,40);
-				 
-				// ctx.beginPath();
-				// ctx.arc(x-5,y,22,0,2*Math.PI);
-				 //ctx.stroke();
 				 
 				 stringLabel(list[i].toUpperCase(),strings[i],"white",ctx);
 				
@@ -86,8 +79,19 @@
 	   
   function stringLabel(s,loc,color,ctx) {  
 		 var x = loc-9;
-    	 ctx.fillStyle = color;		    			
-    	 ctx.fillText(s.toUpperCase(), x,150);	  
+    	 ctx.fillStyle = color;
+    	 var note;
+    	 
+    	 if (s.indexOf("#") < 0) {  
+    	 	ctx.fillText(s.toUpperCase(), x,150);
+  		 } else {
+  			 note = s.replace("#","");
+  			 ctx.fillText(note, x,150);
+  		     ctx.font = "bold 15px Arial";
+  		     ctx.fillText("#",x+22,135);
+  		     ctx.font = "bold 32px Arial";
+  			 
+  		 }
   }	   
 	   
    function playAll() {
@@ -124,22 +128,15 @@
 <div data-role="header">
 	<h1><%=description%></h1>
 	<a id="back" href="#main" data-transition="slide" data-role="button"
-		data-theme="d" data-icon="arrow-l">Back</a>
-<!-- 	<a id="strum" href="#main" data-transition="slide" data-role="button" -->
-<!-- 		data-theme="d" data-icon="arrow-l" onclick="playAll();" >Strum</a> -->
-		
+		data-theme="d" data-icon="arrow-l">Back</a>		
 		
 </div>
 <!-- /header -->
 
-<div id="strings" style="width:100%;height:100%;overflow:hidden;" data-role="content">
+<div id="strings" style="text-align:center;background-color:black; width:100%;height:100%;overflow:hidden;" data-role="content">
 
-
-<!-- <div style="text-align:center;width:100%;height:100%;overflow:hidden;"> -->
-	<canvas id="canvas" style="display:inline;" width="180" height="240"> 
+	<canvas id="canvas" style="display:inline;" width="180" height="250"> 
 	</canvas>
-
-	
 
 		<%  
 		    list = notes.split(",");
@@ -166,12 +163,15 @@
 		
 	
 		<% } %> 
+		
+	
+		
+		
 
 <!-- </div> -->
 
 
 </div>
-
 
 
 
