@@ -1,0 +1,30 @@
+*.class
+
+.DS_Store
+
+# Package Files #
+/target/*.jar
+/target/*.war
+/target/*.ear
+
+# IntelliJ Files #
+/.idea/
+
+# Eclipse Files #
+.springBeans
+.project
+.classpath
+.settings
+/.externalToolBuilders/
+
+# Maven Folder #
+target/
+/bin
+
+/.ssh/
+
+# Node, Grunt #
+/node_modules/
+/build/
+
+/*.iml
