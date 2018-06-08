@@ -18,7 +18,7 @@ Installating and Running
 * Once started, browse to http://localhost:8080.. available tunings should appear in browser, select to display tuner. 
 
 
-
+![](https://github.com/in-the-keyhole/khs-guitar-tuner/blob/master/tuner.png)
      
 
    
