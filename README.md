@@ -13,7 +13,7 @@ Installating and Running
 * Run Jetty from Eclipse with the following commands 
 
   Select POM.xml then Run As Maven Build... input and run as jetty:run goal 
-  
+  ![](https://github.com/in-the-keyhole/khs-guitar-tuner/blob/master/maven-jetty.png)
   
 * Once started, browse to http://localhost:8080.. available tunings should appear in browser, select to display tuner. 
 
