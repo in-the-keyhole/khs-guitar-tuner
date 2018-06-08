@@ -16,6 +16,8 @@ Installating and Running
   ![](https://github.com/in-the-keyhole/khs-guitar-tuner/blob/master/maven-jetty.png)
   
 * Once started, browse to http://localhost:8080.. available tunings should appear in browser, select to display tuner. 
+Click Note to hear note sound
+
 
 
 ![](https://github.com/in-the-keyhole/khs-guitar-tuner/blob/master/tuner.png)
