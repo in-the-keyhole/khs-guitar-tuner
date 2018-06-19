@@ -23,7 +23,7 @@ class ViewDetailTableLogic extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            currentListItem : "",
+            currentList : "",
             currentAudioFile : "",
             currentIndex: 0,
             maxLength: 0
@@ -39,19 +39,21 @@ class ViewDetailTableLogic extends React.Component{
               audioFile.push("audio/"+list[i]+"-"+i+".mp3");
           }
         }
-        this.setState({currentListItem : list[0], currentAudioFile: audioFile[0], 
-            currentIndex: 1, maxLength: list.length})
+        this.setState({currentListItem : list, currentAudioFile: audioFile, 
+            currentIndex: 0, maxLength: list.length})
     
     }
+    /*
     moveNext(){
         
-        this.setState({currentListItem: list[currentIndex],
-            currentAudioFile:audioFile[currentIndex], currentIndex:currentIndex+1})
+        this.setState({currentList: currentList[currentIndex],
+            currentAudioFile:currentAudioFile[currentIndex], currentIndex:currentIndex+1})
     }
+    */
     render(){
          
         //return a table that has props for list and audioFile
-        return(<ViewDetailTable currentList = {currentListItem} currentAudio = {currentAudioFile} index = {currentIndex} max = {maxLength} />);
+        return(<ViewDetailTable currentList = {currentList} currentAudio = {currentAudioFile} index = {currentIndex} max = {maxLength} />);
     }
 
     
