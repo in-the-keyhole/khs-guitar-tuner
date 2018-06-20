@@ -12,7 +12,8 @@ class DetailImageViewLogic extends React.Component{
         }
     }
     render(){
-        return(<DetailImageView audioId = {this.audioIds} audioFile = {this.audioFiles}/>);
+        return(<DetailImageView audioId = {this.state.audioIds} audioFile = {this.state.audioFiles}
+        description = {this.props.description}/>);
     }
     createAudioFiles (){
         {
@@ -35,3 +36,4 @@ class DetailImageViewLogic extends React.Component{
    
     }
 }
+

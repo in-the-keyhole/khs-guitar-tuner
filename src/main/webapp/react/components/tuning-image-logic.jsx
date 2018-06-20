@@ -1,13 +1,16 @@
-import {jqueary} from "./libs/jquery-1.7.2.js";
+import {jquery} from "./libs/jquery-1.7.2.js";
+import {DetailImageViewLogic} from "./tuning-detail-image";
+import {ViewDetailTableLogic} from "./tuning-detail-table-logic";
 
-const img = null;
-const stringPlaying = -1;
+let img = null;
+let stringPlaying = -1;
 
-$(document).ready(function() {
+jquery(document).ready(function() {
 		
 	    img = new Image();
 		img.src = "fret2.jpg";
-		img.onload = fretImageLoaded;
+        img.onload = GuitarTuning.fretImageLoad(); 
+        //fretImageLoaded;
 
     });
     
@@ -18,22 +21,27 @@ class GuitarTuning extends React.Component{
         this.stringLabel = this.stringLabel.bind(this);
         this.playAll = this.playAll.bind(this);
         this.playString = this.playString.bind(this);
+
+        this.state = {
+            notes: ""
+        }
     }
 
     fretImageLoad(){
-        let canvas = $("#canvas")[0];
+        let canvas = jquery("#canvas")[0];
         let ctx = canvas.getContext("2d");
         let ratio = 1.0;
 
         let imgWidth = img.width *ratio;
         let imgHeigth = img.height * ratio;
         ctx.canvas.width = imgWidth;
-        ctx.canvas.height=imgHeight;
-        ctx.drawImage(img,0,0,imgWidth,imgHeight);
+        ctx.canvas.height=imgHeigth;
+        ctx.drawImage(img,0,0,imgWidth,imgHeigth);
         
         ctx.font = "bold 32px Arial";
 
         let notes = "<%notes%>";
+        this.setState({notes: notes});
         let list = notes.split(",");
 
         let strings = [26,63,102,138,174,212];
@@ -43,29 +51,29 @@ class GuitarTuning extends React.Component{
             let y = 150 - 32;
             ctx.fillStyle = "green";
             
-            stringLabel(list[i].toUpperCase(),strings[i],"white",ctx);
+            this.stringLabel(list[i].toUpperCase(),strings[i],"white",ctx);
         }
         
         
-        $("#canvas").click(function(e) {
-	 	         var offsetX = e.pageX - $(this).position().left;
-	 	         var offsetY = e.pageY - $(this).position().top;
+        jquery("#canvas").click(function(e) {
+	 	         let offsetX = e.pageX - jquery(this).position().left;
+	 	         let offsetY = e.pageY - jquery(this).position().top;
 	 	         
-	 	         for (i = 0;i < list.length;i=i+1) {  
+	 	         for (let i = 0;i < list.length;i=i+1) {  
 	 	            var point = strings[i];   	
 	 	        	if (offsetX >= point-5 && offsetX <= point + 20 ) {
 	 	        		
 	 	        		if (stringPlaying == i) {
-	 	        		 stringLabel(list[i].toUpperCase(),strings[i],"white",ctx);		
-	 	        		 stopPlay(stringPlaying);
+	 	        		 this.stringLabel(list[i].toUpperCase(),strings[i],"white",ctx);		
+	 	        		 this.stopPlay(stringPlaying);
 	 	        		 stringPlaying = -1;
 	 	        		} else {
 	 	        		    if (stringPlaying >=0 ) {
-	 	        			 stringLabel(list[stringPlaying].toUpperCase(),strings[stringPlaying],"white",ctx);		
-		 	        		 stopPlay(stringPlaying);
+	 	        			 this.stringLabel(list[stringPlaying].toUpperCase(),strings[stringPlaying],"white",ctx);		
+		 	        		 this.stopPlay(stringPlaying);
 	 	        		    }
-	 	        			stringLabel(list[i].toUpperCase(),strings[i],"red",ctx);
-	 	        			playString(i);
+	 	        			this.stringLabel(list[i].toUpperCase(),strings[i],"red",ctx);
+	 	        			this.playString(i);
 	 	        		 
 	 	        	   }
 	 	           }
@@ -94,29 +102,30 @@ class GuitarTuning extends React.Component{
 
     playAll(){
         for (let i = 0; i < 5; i++) {
-		   playString(i);
+		   this.playString(i);
 		   
 	   }
     }
 
     playString(s){
         let id = "#audio"+s;
-	   let a = $(id)[0];
+	   let a = jquery(id)[0];
 	   a.play();
 	   stringPlaying = s;
     }
 
     stopPlay(s){
         let id = "#audio"+s;
-	   let a = $(id)[0];
+	   let a = jquery(id)[0];
 	   a.pause();
     }
 
    
     render(){
-      /*  return(
-            //return a DetailImageViewLogic component?
-        ); */
-
+      return(<DetailImageViewLogic notes = {this.state.notes} description = {this.props.description}/>,
+         <ViewDetailTableLogic notes = {this.state.notes} description = {this.props.description}/>);
     }
 }
+//need to find where description of page is coming from. thinking it is somewhere
+//in jquery logic and/or the workspace router
+ReactDOM.render(<GuitarTuning description = "Guitar tuner"/>,document.getElementById("root"));

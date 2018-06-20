@@ -1,6 +1,8 @@
 import {ViewDetailTable} from "./tuning-detail-table";
-const list;
-const audioFile;
+
+let list = "";
+let audioFile = "";
+
 class ViewDetailTableLogic extends React.Component{
 
     constructor(props){
@@ -18,11 +20,11 @@ class ViewDetailTableLogic extends React.Component{
                 
     {
         list = this.props.notes.split(",");
-          for(const i = 0; i < list.length; i++) {
+          for(let i = 0; i < list.length; i++) {
               audioFile.push("audio/"+list[i]+"-"+i+".mp3");
           }
         }
-        this.setState({currentListItem : list, currentAudioFile: audioFile, 
+        this.setState({currentList : list, currentAudioFile: audioFile, 
             currentIndex: 0, maxLength: list.length})
     
     }
@@ -36,6 +38,9 @@ class ViewDetailTableLogic extends React.Component{
     render(){
          
         //return a table that has props for list and audioFile
-        return(<ViewDetailTable currentList = {currentList} currentAudio = {currentAudioFile} index = {currentIndex} max = {maxLength} />);
+        return(<ViewDetailTable currentList = {this.state.currentList} currentAudio = {this.state.currentAudioFile}
+             index = {this.state.currentIndex} max = {this.state.maxLength} description = {this.props.description}/>);
     }
 }
+
+//ReactDOM.render(<ViewDetailTableLogic/>,document.getElementById("root"));
