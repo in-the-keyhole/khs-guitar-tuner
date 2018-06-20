@@ -1,4 +1,7 @@
- export class TuningList extends React.Component {
+import React from 'react';
+import Tuning from './tuning-item.jsx';
+
+class TuningList extends React.Component {
     render(){
         const tunings = [];
 
@@ -16,3 +19,5 @@
         );
     }
 }
+
+export default TuningList;

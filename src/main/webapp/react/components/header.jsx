@@ -1,9 +1,14 @@
-export class PageHeader extends React.Component {
+import React from 'react';
+import '../css/index.css';
+
+class PageHeader extends React.Component {
     render(){
         return(
-            <div data-role="header" data-poistion="fixed">
-                <h1>{this.props.title}</h1>
+            <div className='header-container'>
+                <h1 className='header-title'>{this.props.title}</h1>
             </div>
         );
     }
 }
+
+export default PageHeader;

@@ -1,8 +1,5 @@
 import React from 'react';
 import PageHeader from './header.jsx';
-import PageFooter from './footer.jsx';
-import TuningList from './tuning-list.jsx';
-import '../css/index.css';
 
 const TUNINGS = [
     {id: 1001, description: 'Standard', notes: 'e,a,d,g,b,e'},
@@ -15,18 +12,27 @@ const TUNINGS = [
     {id: 1008, description: 'OPEN G', notes: 'd,g,d,g,b,d'}
 ];
 
-class TuningsView extends React.Component {
+class PageDetailView extends React.Component{
     render(){
+        let desc;
+        let notes;
+        TUNINGS.forEach((tuning) =>{
+            const path = '/' + tuning.id;
+            if(path === this.props.location.pathname){
+                desc = tuning.description;
+                notes = tuning.notes;
+            }
+        });
+
         return(
-            <div className='page-view'>
-                <PageHeader title='Keyhole Guitar Tuner'/>
-                {//<TuningList tunings={this.props.tunings} />
-                }
-                <TuningList tunings={TUNINGS} />
-                <PageFooter />
+            <div>
+                <PageHeader title={desc} />
+                <a href="index" data-transition="slide" data-role="button" data-theme="d" data-icon="arrow-l" >Back</a>
+                <p>{desc}</p>
+                <p>{notes}</p>
             </div>
         );
     }
 }
 
-export default TuningsView;
+export default PageDetailView;
