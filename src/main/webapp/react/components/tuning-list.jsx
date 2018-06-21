@@ -10,12 +10,11 @@ class TuningList extends React.Component {
              <Tuning description={tuning.description} notes={tuning.notes} id={tuning.id}/>
            );
         });
+        
         return(
-            <div className="tunningsListContainer" data-role='content'>
-                <ul>
-                    {tunings}
-                </ul>
-            </div>
+                <div class="row">
+                    <div class="col s12">{tunings}</div>
+                </div>
         );
     }
 }
