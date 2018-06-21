@@ -50,3 +50,56 @@
 	font-size: 15px;
 	margin-left: 5px;
 }
+
+.detail-view {
+	background: #e6e6e6;
+	padding-bottom: 550px;
+}
+
+.detail-back {
+	margin-left: 15px;
+}
+
+.detail-image {
+	position: absolute;
+   	left: 41%;
+   	top: 20%; 
+}
+
+.detail-note {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	color: white;
+}
+
+.first-note {
+	position: absolute;
+   	left: 534px;
+   	top: 300px; 
+}
+.second-note {
+	position: absolute;
+   	left: 571px;
+   	top: 300px;
+}
+.third-note {
+	position: absolute;
+   	left: 608px;
+   	top: 300px;
+}
+.fourth-note {
+	position: absolute;
+   	left: 645px;
+   	top: 300px;
+}
+.fifth-note {
+	position: absolute;
+   	left: 682px;
+   	top: 300px;
+}
+.sixth-note {
+	position: absolute;
+   	left: 719px;
+   	top: 300px;
+}

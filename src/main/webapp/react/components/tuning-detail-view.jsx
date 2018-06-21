@@ -1,5 +1,7 @@
 import React from 'react';
 import PageHeader from './header.jsx';
+import fret from "../fret2.jpg";
+import '../css/materialize.min.css';
 
 const TUNINGS = [
     {id: 1001, description: 'Standard', notes: 'e, a, d, g, b, e'},
@@ -24,12 +26,25 @@ class PageDetailView extends React.Component{
             }
         });
 
+        let list = notes.split(", ");
+        
+        
         return(
-            <div>
+            <div className="detail-view">
                 <PageHeader title={desc} />
-                <a href="index" data-transition="slide" data-role="button" data-theme="d" data-icon="arrow-l" >Back</a>
-                <p>{desc}</p>
-                <p>{notes}</p>
+                <a href="index" class="btn-small teal accent-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
+                
+                <img className="detail-image" src={fret} alt="Fret"/>
+                <div class="row">
+                    <div class="col 4"></div>
+                    <div class="col 1 detail-note first-note">{list[0].toUpperCase()}</div>
+                    <div class="col 1 detail-note second-note">{list[1].toUpperCase()}</div>
+                    <div class="col 1 detail-note third-note">{list[2].toUpperCase()}</div>
+                    <div class="col 1 detail-note fourth-note">{list[3].toUpperCase()}</div>
+                    <div class="col 1 detail-note fifth-note">{list[4].toUpperCase()}</div>
+                    <div class="col 1 detail-note sixth-note">{list[5].toUpperCase()}</div>
+                </div>
+                
             </div>
         );
     }
