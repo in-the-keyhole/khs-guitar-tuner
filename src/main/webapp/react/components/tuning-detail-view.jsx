@@ -37,12 +37,12 @@ class PageDetailView extends React.Component{
                 <img className="detail-image" src={fret} alt="Fret"/>
                 <div class="row">
                     <div class="col 4"></div>
-                    <div class="col 1 detail-note first-note">{list[0].toUpperCase()}</div>
-                    <div class="col 1 detail-note second-note">{list[1].toUpperCase()}</div>
-                    <div class="col 1 detail-note third-note">{list[2].toUpperCase()}</div>
-                    <div class="col 1 detail-note fourth-note">{list[3].toUpperCase()}</div>
-                    <div class="col 1 detail-note fifth-note">{list[4].toUpperCase()}</div>
-                    <div class="col 1 detail-note sixth-note">{list[5].toUpperCase()}</div>
+                    <div class="col 1 detail-note first-note"><a className="note" href="">{list[0].toUpperCase()}</a></div>
+                    <div class="col 1 detail-note second-note"><a className="note" href="">{list[1].toUpperCase()}</a></div>
+                    <div class="col 1 detail-note third-note"><a className="note" href="">{list[2].toUpperCase()}</a></div>
+                    <div class="col 1 detail-note fourth-note"><a className="note" href="">{list[3].toUpperCase()}</a></div>
+                    <div class="col 1 detail-note fifth-note"><a className="note" href="">{list[4].toUpperCase()}</a></div>
+                    <div class="col 1 detail-note sixth-note"><a className="note" href="">{list[5].toUpperCase()}</a></div>
                 </div>
                 
             </div>

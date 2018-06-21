@@ -73,6 +73,10 @@
 	color: white;
 }
 
+.note {
+	color: white;
+}
+
 .first-note {
 	position: absolute;
    	left: 534px;
