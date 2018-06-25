@@ -62,7 +62,7 @@
 
 .detail-image {
 	position: absolute;
-   	left: 41%;
+   	left: 40%;
    	top: 20%; 
 }
 
@@ -75,35 +75,36 @@
 
 .note {
 	color: white;
+	cursor: pointer;
 }
 
 .first-note {
 	position: absolute;
-   	left: 534px;
-   	top: 300px; 
+   	left: 4%;
+   	top: 41%; 
 }
 .second-note {
 	position: absolute;
-   	left: 571px;
-   	top: 300px;
+   	left: 19%;
+   	top: 41%;
 }
 .third-note {
 	position: absolute;
-   	left: 608px;
-   	top: 300px;
+   	left: 34%;
+   	top: 41%;
 }
 .fourth-note {
 	position: absolute;
-   	left: 645px;
-   	top: 300px;
+   	left: 49%;
+   	top: 41%;
 }
 .fifth-note {
 	position: absolute;
-   	left: 682px;
-   	top: 300px;
+   	left: 65%;
+   	top: 41%;
 }
 .sixth-note {
 	position: absolute;
-   	left: 719px;
-   	top: 300px;
+   	left: 81%;
+   	top: 41%;
 }
