@@ -1,4 +1,6 @@
 import React from 'react';
+import Edit from './edit-view.jsx';
+import Delete from './delete-view.jsx';
 import '../css/index.css';
 import '../css/materialize.min.css';
 
@@ -15,15 +17,16 @@ class Tuning extends React.Component {
                       <a href={this.props.id} class="btn-small teal accent-4"><i class="material-icons right">folder_open</i>open</a>
                   </div>
                   <div className="card-buttons">
-                      <a class="btn-small teal accent-4 disabled"><i class="material-icons right">edit</i>edit</a>
+                      <Edit description={this.props.description} notes={this.props.notes}/>
                   </div>
                   <div className="card-buttons">
-                      <a class="btn-small teal accent-4 disabled"><i class="material-icons right">delete</i>delete</a>
+                      <Delete />
                   </div>
                </div>
             </div>
         );
     }
 }
+
 
 export default Tuning;
