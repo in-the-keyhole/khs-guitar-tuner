@@ -1,7 +1,9 @@
 import React from 'react';
 import PageHeader from './header.jsx';
 import TuningList from './tuning-list.jsx';
+import AddView from './add-view';
 import '../css/index.css';
+import {Modal,Button,Icon} from 'react-materialize';
 
 const TUNINGS = [
     {id: 1001, description: 'Standard', notes: 'e, a, d, g, b, e'},
@@ -22,10 +24,11 @@ class TuningsView extends React.Component {
                 {//<TuningList tunings={this.props.tunings} />
                 }
                 <TuningList tunings={TUNINGS} />
-                <a class="btn-floating btn-large teal accent-4 tuning-add"><i class="material-icons">add</i></a>
+                <AddView/>
             </div>
         );
     }
+
 }
 
 export default TuningsView;
