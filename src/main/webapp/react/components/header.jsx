@@ -11,11 +11,6 @@ class PageHeader extends React.Component {
                   <li><a href="about"><i class="small material-icons header-about">help_outline</i></a></li>
                 </ul>
               </div>
-                
-//            <div className='header-container'>
-//                <h1 className='header-title'>{this.props.title}</h1>
-//            </div>
-
         );
     }
 }

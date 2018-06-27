@@ -1,6 +1,7 @@
 import React from 'react';
 import Sound from 'react-sound';
 import PageHeader from './header.jsx';
+import Chord from './chord.jsx';
 import fret from "../fret2.jpg";
 import '../css/materialize.min.css';
 
@@ -40,7 +41,8 @@ class PageDetailView extends React.Component{
                 <PageHeader title={desc} />
                 <a href="index" class="btn-small teal accent-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
                 
-                <Sound url={this.state.note} playStatus={this.state.status} loop={true}/>
+                <Chord list={list}/>
+                <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250}/>
                 
                 <div className="detail-image">
                     <img src={fret} alt="Fret"/>

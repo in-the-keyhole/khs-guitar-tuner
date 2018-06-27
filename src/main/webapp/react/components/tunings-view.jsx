@@ -20,8 +20,6 @@ class TuningsView extends React.Component {
         return(
             <div className='page-view'>
                 <PageHeader title='Keyhole Guitar Tuner'/>
-                {//<TuningList tunings={this.props.tunings} />
-                }
                 <TuningList tunings={TUNINGS} />
                 <AddView/>
             </div>
