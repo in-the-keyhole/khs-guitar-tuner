@@ -3,6 +3,7 @@ package com.khs.guitar.endpoint;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.khs.guitar.dataserver.model.Tunings;
 import com.khs.sherpa.annotation.Action;
 import com.khs.sherpa.annotation.Endpoint;
 import com.khs.sherpa.annotation.MethodRequest;
@@ -14,14 +15,25 @@ public class TunningEndpoint {
 		public Long id;
 		public String description;
 		public String notes;
-		public String url;		
+		public String url;	
+		
+		static final int nextId = 7;
 	}
 	
 	
 	@Action(mapping="/tunnings",method = MethodRequest.GET)
 	public List<Tunning> tunnings() {
 		List<Tunning> results = new ArrayList<Tunning>();
-		Tunning tunning = new Tunning();
+		
+		/*Tunning tunning = new Tunning();
+		Tunings testTuning = new Tunings();
+		tunning.id = testTuning.getId();
+		tunning.description = testTuning.getDescription();
+		tunning.notes = testTuning.getNotes();
+		tunning.url = testTuning.getUrl();
+		results.add(tunning);*/
+		
+		/*Tunning tunning = new Tunning();
 		tunning.id = System.currentTimeMillis();
 		tunning.description = "Standard";
 		tunning.notes = "e,a,d,g,b,e";
@@ -78,7 +90,7 @@ public class TunningEndpoint {
 		tunning.description = "OPEN G";
 		tunning.notes = "d,g,d,g,b,d";
 		tunning.url = "open.wav";
-		results.add(tunning);
+		results.add(tunning);*/
 		
 		
 		
