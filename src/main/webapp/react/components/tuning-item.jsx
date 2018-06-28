@@ -14,7 +14,7 @@ class Tuning extends React.Component {
                </div>
                <div class="card-action">
                   <div className="card-buttons">
-                      <a href={this.props.id} class="btn-small teal accent-4"><i class="material-icons right">folder_open</i>open</a>
+                      <a href={this.props.id} class="btn-small blue darken-4"><i class="material-icons right">folder_open</i>open</a>
                   </div>
                   <div className="card-buttons">
                       <Edit description={this.props.description} notes={this.props.notes}/>

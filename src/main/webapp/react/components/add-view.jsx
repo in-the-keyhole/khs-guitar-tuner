@@ -65,12 +65,12 @@ class AddView extends React.Component {
     render() {
         return (
             <Modal
-                header='Add Tuning' trigger={<a class='btn-floating btn-large teal accent-4 tuning-add'><i class="material-icons right">add</i></a>}
+                header='Add Tuning' trigger={<a class='btn-floating btn-large blue darken-4 tuning-add'><i class="material-icons right">add</i></a>}
                 actions={
                     <div class="modal-footer">
-                        <a class="btn-small teal accent-4 modal-action modal-close" onClick={() => this.cancel()}><i class="material-icons right">cancel</i>cancel</a>
+                        <a class="btn-small blue darken-4 modal-action modal-close" onClick={() => this.cancel()}><i class="material-icons right">cancel</i>cancel</a>
                         {' '}
-                        <a class="btn-small teal accent-4 modal-close" onClick={() => this.handleClick()} disabled={this.state.saveDismiss}><i class="material-icons right">save</i>save</a>
+                        <a class="btn-small blue darken-4 modal-close" onClick={() => this.handleClick()} disabled={this.state.saveDismiss}><i class="material-icons right">save</i>save</a>
                     </div>
                 }>
                 <h5>Description</h5>

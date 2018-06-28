@@ -9,7 +9,7 @@ class AboutView extends React.Component{
             <div className="about-view">
                 <div>
                     <PageHeader title='Keyhole Software' />
-                <a href="index" class="btn-small teal accent-4 about-body"><i class="material-icons left">keyboard_backspace</i>back</a>
+                <a href="index" class="btn-small blue darken-4 about-body"><i class="material-icons left">keyboard_backspace</i>back</a>
 
                 </div>
                 <div className="about-body">

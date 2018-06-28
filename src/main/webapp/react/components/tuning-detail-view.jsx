@@ -39,12 +39,12 @@ class PageDetailView extends React.Component{
         return(
             <div className="detail-view">
                 <PageHeader title={desc} />
-                <a href="index" class="btn-small teal accent-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
+                <a href="index" class="btn-small blue darken-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
                 <div className="detail-inst">
                     <h4>{desc} Guitar Tuning:</h4>
                     <ul>
                     <li>Click on a single note to hear that note<br/>
-                    played on a loop.</li><br/>
+                    played on a loop. Click it again to stop the loop.</li><br/>
                     <li>Click on 'Play Chord' to hear the notes<br/>
                     played in one strum.</li>
                     </ul>
@@ -59,7 +59,7 @@ class PageDetailView extends React.Component{
                         <div class="col 4"></div>
                         <div class="col 1 detail-note first-note">
                             <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[0], '0') ? 'green' : 'white'  }}
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[0], '0') ? '#0d47a1' : 'white'  }}
                                 onClick={ () => this.setState({
                                     note: buildAudio(list[0], '0'),
                                     status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[0], '0') ? 'STOPPED' : 'PLAYING',
@@ -69,7 +69,7 @@ class PageDetailView extends React.Component{
                         </div>
                         <div class="col 1 detail-note second-note">
                             <span className="note" 
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[1], '1') ? 'green' : 'white'  }}
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[1], '1') ? '#0d47a1' : 'white'  }}
                                 onClick={ () => this.setState({
                                     note: buildAudio(list[1], '1'),
                                     status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[1], '1') ? 'STOPPED' : 'PLAYING',
@@ -79,7 +79,7 @@ class PageDetailView extends React.Component{
                         </div>
                         <div class="col 1 detail-note third-note">
                             <span className="note" 
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[2], '2') ? 'green' : 'white'  }}
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[2], '2') ? '#0d47a1' : 'white'  }}
                                 onClick={ () => this.setState({
                                     note: buildAudio(list[2], '2'),
                                     status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[2], '2') ? 'STOPPED' : 'PLAYING',
@@ -89,7 +89,7 @@ class PageDetailView extends React.Component{
                         </div>
                         <div class="col 1 detail-note fourth-note">
                             <span className="note" 
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[3], '3') ? 'green' : 'white'  }}
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[3], '3') ? '#0d47a1' : 'white'  }}
                                 onClick={ () => this.setState({
                                     note: buildAudio(list[3], '3'),
                                     status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[3], '3') ? 'STOPPED' : 'PLAYING',
@@ -98,7 +98,7 @@ class PageDetailView extends React.Component{
                             </span>                        </div>
                         <div class="col 1 detail-note fifth-note">
                             <span className="note" 
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[4], '4') ? 'green' : 'white'  }}
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[4], '4') ? '#0d47a1' : 'white'  }}
                                 onClick={ () => this.setState({
                                     note: buildAudio(list[4], '4'),
                                     status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[4], '4') ? 'STOPPED' : 'PLAYING',
@@ -108,7 +108,7 @@ class PageDetailView extends React.Component{
                         </div>
                         <div class="col 1 detail-note sixth-note">
                             <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[5], '5') ? 'green' : 'white'  }}
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[5], '5') ? '#0d47a1' : 'white'  }}
                                 onClick={ () => this.setState({
                                     note: buildAudio(list[5], '5'),
                                     status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[5], '5') ? 'STOPPED' : 'PLAYING',

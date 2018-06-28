@@ -69,12 +69,12 @@ class Edit extends React.Component {
         return (
             <Modal
                 header='Edit Tuning'
-                trigger={<a class="btn-small teal accent-4 tuning-edit"><i class="material-icons right">edit</i>edit</a>}
+                trigger={<a class="btn-small blue darken-4 tuning-edit"><i class="material-icons right">edit</i>edit</a>}
                 actions={
                     <div class="modal-footer">
-                        <a class="btn-small teal accent-4 modal-close" onClick={() => this.cancel()}><i class="material-icons right">cancel</i>cancel</a>
+                        <a class="btn-small blue darken-4 modal-close" onClick={() => this.cancel()}><i class="material-icons right">cancel</i>cancel</a>
                         {' '}
-                        <a class="btn-small teal accent-4 modal-close" disabled={this.state.saveDismiss} onClick={() => this.handleClick()}><i class="material-icons right">save</i>save</a>
+                        <a class="btn-small blue darken-4 modal-close" disabled={this.state.saveDismiss} onClick={() => this.handleClick()}><i class="material-icons right">save</i>save</a>
                     </div>
                 }>
                 <h5>Description</h5>
