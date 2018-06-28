@@ -18,13 +18,28 @@
 	color: white;
 }
 
+.footer-container {
+	background: #00bfa5;
+	height: 40px;
+	padding-bottom: 10px;
+}
+
+.footer-tag {
+	fontsize: 12px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	margin-bottom: 0px;
+	margin-right: 10px;
+	margin-top: 8px;
+}
+
 .page-view {
 	background: #e6e6e6;
 }
 
 .card-buttons {
 	color: white;
-	background: #00bfa5;
 	float: none;
 	display: inline-block;
 	margin-right: 15px;
@@ -33,7 +48,15 @@
 .tuning-add {
 	margin-top: -15px;
 	margin-left: 15px;
-	margin-bottom: 15px;
+	visibility: hidden;
+}
+
+.tuning-edit {
+	visibility: hidden;
+}
+
+.tuning-delete {
+	visibility: hidden;
 }
 
 .about-view {
@@ -71,6 +94,13 @@
 	font-weight: bold;
 	font-size: 25px;
 	color: white;
+}
+
+.detail-inst {
+	margin-left: 15px;
+	margin-top: 50px;
+	font-size: 20px;
+	max-width:37%;
 }
 
 .note {

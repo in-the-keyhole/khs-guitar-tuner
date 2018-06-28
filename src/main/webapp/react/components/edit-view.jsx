@@ -15,7 +15,7 @@ class Edit extends React.Component {
             saveDismiss: true,
             list: []
         };
-        this.onChange - this.onChange.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value }, function () {
@@ -69,7 +69,7 @@ class Edit extends React.Component {
         return (
             <Modal
                 header='Edit Tuning'
-                trigger={<a class="btn-small teal accent-4"><i class="material-icons right">edit</i>edit</a>}
+                trigger={<a class="btn-small teal accent-4 tuning-edit"><i class="material-icons right">edit</i>edit</a>}
                 actions={
                     <div class="modal-footer">
                         <a class="btn-small teal accent-4 modal-close" onClick={() => this.cancel()}><i class="material-icons right">cancel</i>cancel</a>

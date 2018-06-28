@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeader from './header.jsx';
 import TuningList from './tuning-list.jsx';
 import AddView from './add-view';
+import PageFooter from './footer.jsx';
 import '../css/index.css';
 
 const TUNINGS = [
@@ -22,6 +23,7 @@ class TuningsView extends React.Component {
                 <PageHeader title='Keyhole Guitar Tuner'/>
                 <TuningList tunings={TUNINGS} />
                 <AddView/>
+                <PageFooter />
             </div>
         );
     }

@@ -2,7 +2,6 @@ import React from 'react';
 import { Modal } from 'react-materialize';
 import '../css/index.css';
 import '../css/materialize.min.css';
-import Icon from 'react-materialize/lib/Icon';
 
 const NOTES = ["a", "a#", "b", "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#"];
 class AddView extends React.Component {

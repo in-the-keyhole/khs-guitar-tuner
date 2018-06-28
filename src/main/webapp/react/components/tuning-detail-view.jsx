@@ -40,6 +40,15 @@ class PageDetailView extends React.Component{
             <div className="detail-view">
                 <PageHeader title={desc} />
                 <a href="index" class="btn-small teal accent-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
+                <div className="detail-inst">
+                    <h4>{desc} Guitar Tuning:</h4>
+                    <ul>
+                    <li>Click on a single note to hear that note<br/>
+                    played on a loop.</li><br/>
+                    <li>Click on 'Play Chord' to hear the notes<br/>
+                    played in one strum.</li>
+                    </ul>
+                </div>
                 
                 <Chord list={list}/>
                 <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250}/>

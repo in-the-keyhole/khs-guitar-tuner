@@ -8,7 +8,7 @@ class Delete extends React.Component {
         return(
             <Modal
                 header='Delete Tuning'
-                trigger={<a class="btn-small teal accent-4"><i class="material-icons right">delete</i>delete</a>}
+                trigger={<a class="btn-small teal accent-4 tuning-delete"><i class="material-icons right">delete</i>delete</a>}
                 actions={
                     <div class="modal-footer">
                         <a class="btn-small teal accent-4 modal-close"><i class="material-icons right">cancel</i>cancel</a>
