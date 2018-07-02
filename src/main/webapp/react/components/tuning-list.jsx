@@ -2,10 +2,24 @@ import React from 'react';
 import Tuning from './tuning-item.jsx';
 
 class TuningList extends React.Component {
+    constructor( props ) {
+        super( props );
+        this.state = {
+            tunings: []
+        };
+    }
+    componentWillMount() {
+        fetch( 'http://localhost:8765/tunings' )
+            .then( results => { return results.json(); } )
+            .then( data => {
+                this.setState( { tunings: data._embedded.tunings } );
+            } )
+            .catch(( error ) => { console.log( error ) } );
+    }
     render(){
         const tunings = [];
 
-        this.props.tunings.forEach((tuning) =>{
+        this.state.tunings.forEach((tuning) =>{
            tunings.push(
              <Tuning description={tuning.description} notes={tuning.notes} id={tuning.id}/>
            );

@@ -5,115 +5,121 @@ import Chord from './chord.jsx';
 import fret from "../fret2.jpg";
 import '../css/materialize.min.css';
 
-const TUNINGS = [
-    {id: 1001, description: 'Standard', notes: 'e, a, d, g, b, e'},
-    {id: 1002, description: 'DROP D', notes: 'd, a, d, g, b, e'},
-    {id: 1003, description: 'DADGAD', notes: 'd, a, d, g, a, d'},
-    {id: 1004, description: 'Half Step Down', notes: 'd#, g#, c#, f#, a#, d#'},
-    {id: 1005, description: 'Whole Step Down', notes: 'd, g, c, f, a, d'},
-    {id: 1006, description: 'OPEN C', notes: 'c, g, c, g, c, e'},
-    {id: 1007, description: 'OPEN D', notes: 'd, a, d, f#, a, d'},
-    {id: 1008, description: 'OPEN G', notes: 'd, g, d, g, b, d'}
-];
-
-class PageDetailView extends React.Component{
-    constructor(props){
-        super(props);
+class PageDetailView extends React.Component {
+    constructor( props ) {
+        super( props );
         this.state = {
             note: null,
             status: 'PLAYING',
+            desc: '',
+            notes: ''
         };
+        this.uppercase = this.uppercase.bind(this);
     }
-    render(){
-        let desc, notes;
-        TUNINGS.forEach((tuning) =>{
-            const path = '/' + tuning.id;
-            if(path === this.props.location.pathname){
-                desc = tuning.description;
-                notes = tuning.notes;
-            }
-        });
-        
-        let list = notes.split(", ");
-        
-        return(
+
+    uppercase(note){
+        if(note){
+            return note.toUpperCase();
+        }
+    }
+    
+    componentWillMount() {
+        let currentComponent = this;
+        fetch( 'http://localhost:8765/tunings' )
+            .then( results => { return results.json(); } )
+            .then( data => {
+                let tunings = data._embedded.tunings;
+                tunings.forEach( (tuning) => {
+                    let path = '/tunings/' + tuning.id;
+                    if ( path === window.location.pathname ) {
+                        currentComponent.setState( { desc: tuning.description, notes: tuning.notes } );
+                    }
+                } );
+            } )
+            .catch(( error ) => { console.log( error ) } );
+    }
+
+    render() {
+        var list = this.state.notes.split( ',' );
+
+        return (
             <div className="detail-view">
-                <PageHeader title={desc} />
-                <a href="index" class="btn-small blue darken-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
+                <PageHeader title={this.state.desc} />
+                <a href="/" class="btn-small blue darken-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
                 <div className="detail-inst">
-                    <h4>{desc} Guitar Tuning:</h4>
+                    <h4>{this.state.desc} Guitar Tuning:</h4>
                     <ul>
-                    <li>Click on a single note to hear that note<br/>
-                    played on a loop. Click it again to stop the loop.</li><br/>
-                    <li>Click on 'Play Chord' to hear the notes<br/>
-                    played in one strum.</li>
+                        <li>Click on a single note to hear that note<br />
+                            played on a loop. Click it again to stop the loop.</li><br />
+                        <li>Click on 'Play Chord' to hear the notes<br />
+                            played in one strum.</li>
                     </ul>
                 </div>
-                
-                <Chord list={list}/>
-                <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250}/>
-                
+
+                <Chord list={list} />
+                <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
+
                 <div className="detail-image">
-                    <img src={fret} alt="Fret"/>
+                    <img src={fret} alt="Fret" />
                     <div class="row">
                         <div class="col 4"></div>
                         <div class="col 1 detail-note first-note">
                             <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[0], '0') ? '#0d47a1' : 'white'  }}
-                                onClick={ () => this.setState({
-                                    note: buildAudio(list[0], '0'),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[0], '0') ? 'STOPPED' : 'PLAYING',
-                                })}>
-                                {list[0].toUpperCase()}
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[0], '0' ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.setState( {
+                                    note: buildAudio( list[0], '0' ),
+                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[0], '0' ) ? 'STOPPED' : 'PLAYING',
+                                } )}>
+                                {this.uppercase(list[0])}
                             </span>
                         </div>
                         <div class="col 1 detail-note second-note">
-                            <span className="note" 
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[1], '1') ? '#0d47a1' : 'white'  }}
-                                onClick={ () => this.setState({
-                                    note: buildAudio(list[1], '1'),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[1], '1') ? 'STOPPED' : 'PLAYING',
-                                })}>
-                                {list[1].toUpperCase()}
+                            <span className="note"
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[1], '1' ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.setState( {
+                                    note: buildAudio( list[1], '1' ),
+                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[1], '1' ) ? 'STOPPED' : 'PLAYING',
+                                } )}>
+                                {this.uppercase(list[1])}
                             </span>
                         </div>
                         <div class="col 1 detail-note third-note">
-                            <span className="note" 
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[2], '2') ? '#0d47a1' : 'white'  }}
-                                onClick={ () => this.setState({
-                                    note: buildAudio(list[2], '2'),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[2], '2') ? 'STOPPED' : 'PLAYING',
-                                })}>
-                                {list[2].toUpperCase()}
+                            <span className="note"
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[2], '2' ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.setState( {
+                                    note: buildAudio( list[2], '2' ),
+                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[2], '2' ) ? 'STOPPED' : 'PLAYING',
+                                } )}>
+                                {this.uppercase(list[2])}
                             </span>
                         </div>
                         <div class="col 1 detail-note fourth-note">
-                            <span className="note" 
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[3], '3') ? '#0d47a1' : 'white'  }}
-                                onClick={ () => this.setState({
-                                    note: buildAudio(list[3], '3'),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[3], '3') ? 'STOPPED' : 'PLAYING',
-                                })}>
-                                {list[3].toUpperCase()}
+                            <span className="note"
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[3], '3' ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.setState( {
+                                    note: buildAudio( list[3], '3' ),
+                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[3], '3' ) ? 'STOPPED' : 'PLAYING',
+                                } )}>
+                                {this.uppercase(list[3])}
                             </span>                        </div>
                         <div class="col 1 detail-note fifth-note">
-                            <span className="note" 
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[4], '4') ? '#0d47a1' : 'white'  }}
-                                onClick={ () => this.setState({
-                                    note: buildAudio(list[4], '4'),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[4], '4') ? 'STOPPED' : 'PLAYING',
-                                })}>
-                                {list[4].toUpperCase()}
+                            <span className="note"
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[4], '4' ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.setState( {
+                                    note: buildAudio( list[4], '4' ),
+                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[4], '4' ) ? 'STOPPED' : 'PLAYING',
+                                } )}>
+                                {this.uppercase(list[4])}
                             </span>
                         </div>
                         <div class="col 1 detail-note sixth-note">
                             <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[5], '5') ? '#0d47a1' : 'white'  }}
-                                onClick={ () => this.setState({
-                                    note: buildAudio(list[5], '5'),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio(list[5], '5') ? 'STOPPED' : 'PLAYING',
-                                })}>
-                                {list[5].toUpperCase()}
+                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[5], '5' ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.setState( {
+                                    note: buildAudio( list[5], '5' ),
+                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[5], '5' ) ? 'STOPPED' : 'PLAYING',
+                                } )}>
+                                {this.uppercase(list[5])}
                             </span>
                         </div>
                     </div>
@@ -123,15 +129,15 @@ class PageDetailView extends React.Component{
     }
 }
 
-function buildAudio(note, index){
-    
+function buildAudio( note, index ) {
+
     var sharp = "";
-    if (note.indexOf("#") >=0 ) {
-        sharp="-sharp";
-        note = note.replace("#","");
+    if ( note && note.indexOf( "#" ) >= 0 ) {
+        sharp = "-sharp";
+        note = note.replace( "#", "" );
     }
-    
-    return "audio/"+note+sharp+"-"+index+".mp3";
+
+    return "/audio/" + note + sharp + "-" + index + ".mp3";
 }
 
 

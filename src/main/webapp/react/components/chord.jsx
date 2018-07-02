@@ -34,12 +34,12 @@ class Chord extends React.Component{
 function buildAudio(note, index){
     
     var sharp = "";
-    if (note.indexOf("#") >=0 ) {
+    if (note && note.indexOf("#") >=0 ) {
         sharp="-sharp";
         note = note.replace("#","");
     }
     
-    return "audio/"+note+sharp+"-"+index+".mp3";
+    return "/audio/"+note+sharp+"-"+index+".mp3";
 }
 
 export default Chord;
