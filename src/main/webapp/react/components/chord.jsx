@@ -25,7 +25,7 @@ class Chord extends React.Component{
                     onClick={() => this.setState({status: 'PLAYING'})} 
                     class="btn-small blue darken-4 chord-button" 
                     disabled={ this.state.status === 'PLAYING' ? true : false }>
-                    <i class="material-icons right">play_arrow</i>play chord</a>
+                    <i class="material-icons right">play_arrow</i>play</a>
             </div>
         );
     }

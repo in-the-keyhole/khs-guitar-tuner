@@ -81,7 +81,7 @@
 
 .detail-view {
 	background: #e6e6e6;
-	padding-bottom: 272px;
+	padding-bottom: 292px;
 }
 
 .detail-back {
@@ -103,7 +103,7 @@
 
 .detail-inst {
 	margin-left: 15px;
-	margin-top: 50px;
+	margin-top: 30px;
 	font-size: 20px;
 	max-width:37%;
 }
@@ -146,6 +146,11 @@
 
 .chord-button {
 	position: absolute;
-   	left: 43.5%;
+   	left: 45.5%;
    	top: 13%;
 }
+
+.input-field input:focus {
+   border-bottom: 1px solid #0d47a1 !important;
+   box-shadow: 0 1px 0 0 #0d47a1 !important;
+ }

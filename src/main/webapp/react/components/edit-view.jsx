@@ -78,12 +78,12 @@ class Edit extends React.Component {
                     </div>
                 }>
                 <h5>Description</h5>
-                <div>
+                <div className='input-field'>
                     <input type="text" name="description" value={this.state.description} onChange={(value) => this.onChange(value)}
                         placeholder="Tuning Name" />
                     <label>{this.state.errorMessD}</label>
                 </div>
-                <div>
+                <div className='input-field'>
                     <h5>Notes</h5>
                     <input type="text" name="notes" value={this.state.notes} onChange={(value) => this.onChange(value)}
                         placeholder="e, a, d, g, b, e" />

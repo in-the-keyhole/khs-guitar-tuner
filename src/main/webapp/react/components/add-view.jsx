@@ -74,12 +74,12 @@ class AddView extends React.Component {
                     </div>
                 }>
                 <h5>Description</h5>
-                <div>
+                <div className='input-field'>
                     <input type="text" placeholder="Tuning Name" name="description" value={this.state.description} onChange={(value) => this.onChange(value)} />
                     <label>{this.state.errorMessageD}</label>
                 </div>
                 <h5>Notes</h5>
-                <div>
+                <div className='input-field'>
                     <input type="text" placeholder="e, a, d, g, b, e" name="notes" value={this.state.notes} onChange={(value) => this.onChange(value)} />
                     <label>{this.state.errorMessageN}</label>
                 </div>

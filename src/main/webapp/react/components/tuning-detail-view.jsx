@@ -4,6 +4,7 @@ import PageHeader from './header.jsx';
 import Chord from './chord.jsx';
 import fret from "../fret2.jpg";
 import '../css/materialize.min.css';
+import '../css/index.css';
 
 class PageDetailView extends React.Component {
     constructor( props ) {
@@ -15,12 +16,7 @@ class PageDetailView extends React.Component {
             notes: ''
         };
         this.uppercase = this.uppercase.bind(this);
-    }
-
-    uppercase(note){
-        if(note){
-            return note.toUpperCase();
-        }
+        this.isPlaying = this.isPlaying.bind(this);
     }
     
     componentWillMount() {
@@ -39,8 +35,25 @@ class PageDetailView extends React.Component {
             .catch(( error ) => { console.log( error ) } );
     }
 
+    uppercase(note){
+        if(note){
+            return note.toUpperCase();
+        }
+    }
+    
+    isPlaying(note){
+        return this.state.status === 'PLAYING' && this.state.note === note ? true : false;
+    }
+    
     render() {
         var list = this.state.notes.split( ',' );
+
+        var note0 = buildAudio(list[0], '0');
+        var note1 = buildAudio(list[1], '1');
+        var note2 = buildAudio(list[2], '2');
+        var note3 = buildAudio(list[3], '3');
+        var note4 = buildAudio(list[4], '4');
+        var note5 = buildAudio(list[5], '5');
 
         return (
             <div className="detail-view">
@@ -51,7 +64,7 @@ class PageDetailView extends React.Component {
                     <ul>
                         <li>Click on a single note to hear that note<br />
                             played on a loop. Click it again to stop the loop.</li><br />
-                        <li>Click on 'Play Chord' to hear the notes<br />
+                        <li>Click on 'Play' to hear the notes<br />
                             played in one strum.</li>
                     </ul>
                 </div>
@@ -64,60 +77,60 @@ class PageDetailView extends React.Component {
                     <div class="row">
                         <div class="col 4"></div>
                         <div class="col 1 detail-note first-note">
-                            <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[0], '0' ) ? '#0d47a1' : 'white' }}
+                            <span className="note" 
+                                style={{ color: this.isPlaying(note0) ? '#0d47a1' : 'white' }} 
                                 onClick={() => this.setState( {
-                                    note: buildAudio( list[0], '0' ),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[0], '0' ) ? 'STOPPED' : 'PLAYING',
+                                    note: note0,
+                                    status: this.isPlaying(note0) ? 'STOPPED' : 'PLAYING',
                                 } )}>
                                 {this.uppercase(list[0])}
                             </span>
                         </div>
                         <div class="col 1 detail-note second-note">
                             <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[1], '1' ) ? '#0d47a1' : 'white' }}
+                                style={{ color: this.isPlaying(note1) ? '#0d47a1' : 'white' }}
                                 onClick={() => this.setState( {
-                                    note: buildAudio( list[1], '1' ),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[1], '1' ) ? 'STOPPED' : 'PLAYING',
+                                    note: note1,
+                                    status: this.isPlaying(note1) ? 'STOPPED' : 'PLAYING',
                                 } )}>
                                 {this.uppercase(list[1])}
                             </span>
                         </div>
                         <div class="col 1 detail-note third-note">
                             <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[2], '2' ) ? '#0d47a1' : 'white' }}
+                                style={{ color: this.isPlaying(note2) ? '#0d47a1' : 'white' }}
                                 onClick={() => this.setState( {
-                                    note: buildAudio( list[2], '2' ),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[2], '2' ) ? 'STOPPED' : 'PLAYING',
+                                    note: note2,
+                                    status: this.isPlaying(note2) ? 'STOPPED' : 'PLAYING',
                                 } )}>
                                 {this.uppercase(list[2])}
                             </span>
                         </div>
                         <div class="col 1 detail-note fourth-note">
                             <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[3], '3' ) ? '#0d47a1' : 'white' }}
+                                style={{ color: this.isPlaying(note3) ? '#0d47a1' : 'white' }}
                                 onClick={() => this.setState( {
-                                    note: buildAudio( list[3], '3' ),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[3], '3' ) ? 'STOPPED' : 'PLAYING',
+                                    note: note3,
+                                    status: this.isPlaying(note3) ? 'STOPPED' : 'PLAYING',
                                 } )}>
                                 {this.uppercase(list[3])}
                             </span>                        </div>
                         <div class="col 1 detail-note fifth-note">
                             <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[4], '4' ) ? '#0d47a1' : 'white' }}
+                                style={{ color: this.isPlaying(note4) ? '#0d47a1' : 'white' }}
                                 onClick={() => this.setState( {
-                                    note: buildAudio( list[4], '4' ),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[4], '4' ) ? 'STOPPED' : 'PLAYING',
+                                    note: note4,
+                                    status: this.isPlaying(note4) ? 'STOPPED' : 'PLAYING',
                                 } )}>
                                 {this.uppercase(list[4])}
                             </span>
                         </div>
                         <div class="col 1 detail-note sixth-note">
                             <span className="note"
-                                style={{ color: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[5], '5' ) ? '#0d47a1' : 'white' }}
+                                style={{ color: this.isPlaying(note5) ? '#0d47a1' : 'white' }}
                                 onClick={() => this.setState( {
-                                    note: buildAudio( list[5], '5' ),
-                                    status: this.state.status === 'PLAYING' && this.state.note === buildAudio( list[5], '5' ) ? 'STOPPED' : 'PLAYING',
+                                    note: note5,
+                                    status: this.isPlaying(note5) ? 'STOPPED' : 'PLAYING',
                                 } )}>
                                 {this.uppercase(list[5])}
                             </span>
@@ -130,15 +143,12 @@ class PageDetailView extends React.Component {
 }
 
 function buildAudio( note, index ) {
-
     var sharp = "";
     if ( note && note.indexOf( "#" ) >= 0 ) {
         sharp = "-sharp";
         note = note.replace( "#", "" );
     }
-
     return "/audio/" + note + sharp + "-" + index + ".mp3";
 }
-
 
 export default PageDetailView;
