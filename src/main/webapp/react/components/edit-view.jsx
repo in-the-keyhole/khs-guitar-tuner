@@ -61,8 +61,6 @@ class Edit extends React.Component {
         });
     }
     handleClick(event) {
-        //send tuning name and notes to somewhere to create a new tuning  
-        alert("You submitted a tuning of " + this.state.list + " named " + this.state.description);
         this.setState({ saveDismiss: true, errorMessageD: '', errorMessageN: '' });
     }
     render() {

@@ -13,12 +13,22 @@ class PageDetailView extends React.Component {
             note: null,
             status: 'PLAYING',
             desc: '',
-            notes: ''
+            notes: '',
+            chordPlaying: false
         };
         this.uppercase = this.uppercase.bind(this);
         this.isPlaying = this.isPlaying.bind(this);
+        this.newClick = this.newClick.bind(this);
     }
     
+        handleChord(){
+            this.setState({chordPlaying:true});
+           
+    }
+
+    handleFinish(){
+        this.setState({chordPlaying:false});
+    }
     componentWillMount() {
         let currentComponent = this;
         fetch( 'http://localhost:8765/tunings' )
@@ -43,6 +53,12 @@ class PageDetailView extends React.Component {
     
     isPlaying(note){
         return this.state.status === 'PLAYING' && this.state.note === note ? true : false;
+    }
+
+    newClick(n){
+        if(!this.state.chordPlaying){
+            this.setState( {note: n, status: this.isPlaying(n) ? 'STOPPED' : 'PLAYING',} )
+        }
     }
     
     render() {
@@ -69,7 +85,7 @@ class PageDetailView extends React.Component {
                     </ul>
                 </div>
 
-                <Chord list={list} />
+                <Chord list={list} isPlaying = {() => this.handleChord()} isStopped = {() => this.handleFinish()}/>
                 <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
 
                 <div className="detail-image">
@@ -79,59 +95,41 @@ class PageDetailView extends React.Component {
                         <div class="col 1 detail-note first-note">
                             <span className="note" 
                                 style={{ color: this.isPlaying(note0) ? '#0d47a1' : 'white' }} 
-                                onClick={() => this.setState( {
-                                    note: note0,
-                                    status: this.isPlaying(note0) ? 'STOPPED' : 'PLAYING',
-                                } )}>
+                                onClick={() => this.newClick(note0)}>
                                 {this.uppercase(list[0])}
                             </span>
                         </div>
                         <div class="col 1 detail-note second-note">
                             <span className="note"
                                 style={{ color: this.isPlaying(note1) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.setState( {
-                                    note: note1,
-                                    status: this.isPlaying(note1) ? 'STOPPED' : 'PLAYING',
-                                } )}>
+                                onClick={() =>this.newClick(note1)}>
                                 {this.uppercase(list[1])}
                             </span>
                         </div>
                         <div class="col 1 detail-note third-note">
                             <span className="note"
                                 style={{ color: this.isPlaying(note2) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.setState( {
-                                    note: note2,
-                                    status: this.isPlaying(note2) ? 'STOPPED' : 'PLAYING',
-                                } )}>
+                                onClick={() => this.newClick(note2)}>
                                 {this.uppercase(list[2])}
                             </span>
                         </div>
                         <div class="col 1 detail-note fourth-note">
                             <span className="note"
                                 style={{ color: this.isPlaying(note3) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.setState( {
-                                    note: note3,
-                                    status: this.isPlaying(note3) ? 'STOPPED' : 'PLAYING',
-                                } )}>
+                                onClick={() => this.newClick(note3)}>
                                 {this.uppercase(list[3])}
                             </span>                        </div>
                         <div class="col 1 detail-note fifth-note">
                             <span className="note"
                                 style={{ color: this.isPlaying(note4) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.setState( {
-                                    note: note4,
-                                    status: this.isPlaying(note4) ? 'STOPPED' : 'PLAYING',
-                                } )}>
+                                onClick={() =>this.newClick(note4)}>
                                 {this.uppercase(list[4])}
                             </span>
                         </div>
                         <div class="col 1 detail-note sixth-note">
                             <span className="note"
                                 style={{ color: this.isPlaying(note5) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.setState( {
-                                    note: note5,
-                                    status: this.isPlaying(note5) ? 'STOPPED' : 'PLAYING',
-                                } )}>
+                                onClick={() =>this.newClick(note5)}>
                                 {this.uppercase(list[5])}
                             </span>
                         </div>

@@ -11,18 +11,28 @@ class Chord extends React.Component{
         }
     }
     
+    newClick(){
+        this.setState({status: 'PLAYING'});
+        this.props.isPlaying();
+    }
+
+    newFinished(){
+        this.setState({status: 'STOPPED'})  ;
+        this.props.isStopped();
+    }
+
     render(){
         return(
             <div>
-                <Sound url={buildAudio(this.props.list[0], '0')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.setState({status: 'STOPPED'})}/>
-                <Sound url={buildAudio(this.props.list[1], '1')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.setState({status: 'STOPPED'})}/>
-                <Sound url={buildAudio(this.props.list[2], '2')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.setState({status: 'STOPPED'})}/>
-                <Sound url={buildAudio(this.props.list[3], '3')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.setState({status: 'STOPPED'})}/>
-                <Sound url={buildAudio(this.props.list[4], '4')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.setState({status: 'STOPPED'})}/>
-                <Sound url={buildAudio(this.props.list[5], '5')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.setState({status: 'STOPPED'})}/>
+                <Sound url={buildAudio(this.props.list[0], '0')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={buildAudio(this.props.list[1], '1')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={buildAudio(this.props.list[2], '2')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={buildAudio(this.props.list[3], '3')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={buildAudio(this.props.list[4], '4')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={buildAudio(this.props.list[5], '5')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
         
                 <a 
-                    onClick={() => this.setState({status: 'PLAYING'})} 
+                    onClick={() => this.newClick()} 
                     class="btn-small blue darken-4 chord-button" 
                     disabled={ this.state.status === 'PLAYING' ? true : false }>
                     <i class="material-icons right">play_arrow</i>play</a>
