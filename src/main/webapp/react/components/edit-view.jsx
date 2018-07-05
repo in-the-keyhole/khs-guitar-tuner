@@ -61,8 +61,6 @@ class Edit extends React.Component {
         });
     }
     handleClick(event) {
-        //send tuning name and notes to somewhere to create a new tuning  
-        alert("You submitted a tuning of " + this.state.list + " named " + this.state.description);
         this.setState({ saveDismiss: true, errorMessageD: '', errorMessageN: '' });
         fetch('http://localhost:8765/tunings', {
 		  method: 'post',
@@ -87,12 +85,12 @@ class Edit extends React.Component {
                     </div>
                 }>
                 <h5>Description</h5>
-                <div>
+                <div className='input-field'>
                     <input type="text" name="description" value={this.state.description} onChange={(value) => this.onChange(value)}
                         placeholder="Tuning Name" />
                     <label>{this.state.errorMessD}</label>
                 </div>
-                <div>
+                <div className='input-field'>
                     <h5>Notes</h5>
                     <input type="text" name="notes" value={this.state.notes} onChange={(value) => this.onChange(value)}
                         placeholder="e, a, d, g, b, e" />
