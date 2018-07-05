@@ -12,17 +12,18 @@ Installating and Running
 * Import into STS Eclipse as an Existing Maven Project 
 * Connect to desired server using the steps below:
 
-Download PostgreSQL
-Install everything with the default settings
-Open up PG Admin 4
-Click on "Severs"
-Click on "Databases" then "postgres"
-Click on "Schema"
-Right-Click on "Tables" and click "create" and name it "tunings"
-Right-Click on the table you made and select "properties"
-Navigate to the panel that lets you add columns
-Create a row for tuning_id (type: integer), tuning_description (type:text), tuning_notes (type: text)
-Right-Click on the table again an hover "scripts" and click any one of them
+* Download PostgreSQL
+* Install everything with the default settings
+* Open up PG Admin 4
+* Click on "Severs"
+* Click on "Databases" then "postgres"
+* Click on "Schema"
+* Right-Click on "Tables" and click "create" and name it "tunings"
+* Right-Click on the table you made and select "properties"
+* Navigate to the panel that lets you add columns
+* Create a row for tuning_id (type: integer), tuning_description (type:text), tuning_notes (type: text)
+* Right-Click on the table again an hover "scripts" and click any one of them
+
 
 *then populate the database with the following information:
 
