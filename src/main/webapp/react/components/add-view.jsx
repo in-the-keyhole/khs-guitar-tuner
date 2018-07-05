@@ -1,6 +1,5 @@
 import React from 'react';
 import { Modal } from 'react-materialize';
-import  TuningList  from './tuning-list.jsx';
 import '../css/index.css';
 import '../css/materialize.min.css';
 
