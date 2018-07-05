@@ -24,10 +24,10 @@ Installating and Running
 * Create a row for tuning_id (type: integer), tuning_description (type:text), tuning_notes (type: text)
 * Right-Click on the table again an hover "scripts" and click any one of them
 
-* then populate the database with the following information:
+then populate the database with the following information:
 
     INSERT INTO public."tunings"(
-	tuning_id, tuning_description, tuning_notes)
+    tuning_id, tuning_description, tuning_notes)
 	VALUES (1, 'Standard', 'e,a,d,g,b,e');
 	
 	INSERT INTO public."tunings"(
