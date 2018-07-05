@@ -57,4 +57,3 @@ INSERT INTO public."tunings"(
   * Find Boot Dashboard on STS Eclipse, you will see this application under local. Run it as a spring boot application.
   * Use npm start to start application
   * Once started it should take you to localhost:3000, there you can choose from different tunings and click the note to hear a sound.
->>>>>>> react
