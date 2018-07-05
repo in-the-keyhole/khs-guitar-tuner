@@ -26,7 +26,7 @@ Installating and Running
 
 * then populate the database with the following information:
 
-INSERT INTO public."tunings"(
+    INSERT INTO public."tunings"(
 	tuning_id, tuning_description, tuning_notes)
 	VALUES (1, 'Standard', 'e,a,d,g,b,e');
 	
