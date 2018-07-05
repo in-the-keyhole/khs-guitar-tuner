@@ -76,9 +76,11 @@ class PageDetailView extends React.Component {
                 <PageHeader title={this.state.desc} />
                 <a href="/" class="btn-small blue darken-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
                 <div className="detail-inst">
-                    <h4>{this.state.desc} Guitar Tuning:</h4>
+                    <div className='detail-inst-header'>
+                        <h4>{this.state.desc} Guitar Tuning:</h4>
+                    </div>
                     <ul>
-                        <li>Click on a single note to hear that note<br />
+                        <li>Click on a SINGLE NOTE to hear that note<br />
                             played on a loop. Click it again to stop the loop.</li><br />
                         <li>Click on 'Play' to hear the notes<br />
                             played in one strum.</li>

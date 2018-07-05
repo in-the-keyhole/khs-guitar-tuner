@@ -22,9 +22,6 @@ public class Tunings {
 	@Column(name="tuning_notes", nullable=false)
 	private String notes;
 	
-	@Column(name="tuning_url")
-	private String url;
-	
 	public Long getId() {
         return id;
     }
@@ -48,14 +45,6 @@ public class Tunings {
 	
 	public Tunings setNotes(String userNotes) {
         this.notes = userNotes;
-        return this;
-    }
-	public String getUrl() {
-        return url;
-    }
-	
-	public Tunings setUrl(String userUrl) {
-        this.url = userUrl;
         return this;
     }
 }

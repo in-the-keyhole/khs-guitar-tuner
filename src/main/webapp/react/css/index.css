@@ -62,7 +62,7 @@
 
 .about-view {
 	background: #e6e6e6;
-	padding-bottom: 421px;
+	padding-bottom: 433px;
 }
 
 .about-body{
@@ -75,13 +75,14 @@
 }
 
 .about-label {
-	font-size: 15px;
+	font-size: 18px;
 	margin-left: 5px;
+	color: #4d4d4d;
 }
 
 .detail-view {
 	background: #e6e6e6;
-	padding-bottom: 292px;
+	padding-bottom: 315px;
 }
 
 .detail-back {
@@ -101,11 +102,16 @@
 	color: white;
 }
 
+.detail-inst-header {
+	color: black;	
+}
+
 .detail-inst {
 	margin-left: 15px;
 	margin-top: 30px;
-	font-size: 20px;
+	font-size: 18px;
 	max-width:37%;
+	color: #4d4d4d;
 }
 
 .note {

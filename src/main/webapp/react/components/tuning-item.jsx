@@ -16,7 +16,7 @@ class Tuning extends React.Component {
                   <div className="card-buttons">
                       <a 
                           href={'/tunings/'+this.props.id}
-                          class="btn-small blue darken-4"><i class="material-icons right">folder_open</i>open
+                          class="btn-small blue darken-4"><i class="material-icons right">folder</i>open
                       </a>
                   </div>
                   <div className="card-buttons">
