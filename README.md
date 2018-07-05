@@ -10,25 +10,8 @@ Installating and Running
 
 * Clone Repo 
 * Import into STS Eclipse as an Existing Maven Project 
-<<<<<<< HEAD
-* Run Jetty from Eclipse with the following commands 
-* Select the `POM.xml` then `Run As` Maven Build... input and run as `jetty:run goal` 
 
-  ![](https://github.com/in-the-keyhole/khs-guitar-tuner/blob/master/maven-jetty.png)
-  
-* Once started, browse to http://localhost:8080.. available tunings should appear in browser, select to display tuner. 
-Click Note to hear note sound
-
-
-
-![](https://github.com/in-the-keyhole/khs-guitar-tuner/blob/master/tuner.png)
-     
-
-   
-
-=======
 * Connect to desired server using the steps below:
-
 * Download PostgreSQL
 * Install everything with the default settings
 * Open up PG Admin 4
@@ -41,8 +24,7 @@ Click Note to hear note sound
 * Create a row for tuning_id (type: integer), tuning_description (type:text), tuning_notes (type: text)
 * Right-Click on the table again an hover "scripts" and click any one of them
 
-
-*then populate the database with the following information:
+* then populate the database with the following information:
 
 INSERT INTO public."tunings"(
 	tuning_id, tuning_description, tuning_notes)
