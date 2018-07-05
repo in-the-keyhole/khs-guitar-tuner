@@ -16,14 +16,14 @@ class Tuning extends React.Component {
                   <div className="card-buttons">
                       <a 
                           href={'/tunings/'+this.props.id}
-                          class="btn-small blue darken-4"><i class="material-icons right">folder</i>open
+                          class="btn-small blue darken-4"><i class="material-icons right">folder_open</i>open
                       </a>
                   </div>
                   <div className="card-buttons">
-                      <Edit description={this.props.description} notes={this.props.notes}/>
+                      <Edit description={this.props.description} notes={this.props.notes} id={this.props.id}/>
                   </div>
                   <div className="card-buttons">
-                      <Delete />
+                      <Delete description={this.props.description} notes={this.props.notes} id={this.props.id}/>
                   </div>
                </div>
             </div>

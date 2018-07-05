@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal } from 'react-materialize';
+import  TuningList  from './tuning-list.jsx';
 import '../css/index.css';
 import '../css/materialize.min.css';
 
@@ -13,7 +14,10 @@ class AddView extends React.Component {
             errorMessageN: '',
             saveDismiss: true,
             errorMessageD: '',
-            list: []
+            list: [],
+            tunings: [],
+            lastTune: 0,
+            lastId: 0,
         }
         this.onChange = this.onChange.bind(this);
     }
@@ -57,10 +61,35 @@ class AddView extends React.Component {
     cancel() {
         this.setState({ description: '', notes: '', saveDismiss: true, errorMessageD: '', errorMessageN: '' });
     }
+    getLength(tunings){
+     if (tunings){
+     return tunings.length
+     }
+    }
+    
+    componentWillMount() {
+        fetch( 'http://localhost:8765/tunings' )
+            .then( results => { return results.json(); } )
+            .then( data => {
+                let tunings = data._embedded.tunings;
+                this.setState({lastTune: this.getLength(tunings) - 1});
+                this.setState( {lastId: tunings[this.state.lastTune].id + 1});
+            } )
+            .catch(( error ) => { console.log( error ) } );
+            console.log(this.state.lastId);
+    }
+    
     handleClick(event) {
-        //send tuning name and notes to somewhere to create a new tuning  
-        alert("You submitted a tuning of " + this.state.list + " named " + this.state.description);
-        this.setState({ description: '', notes: '', saveDismiss: true, errorMessageD: '', errorMessageN: '' });
+        //send tuning name and notes to somewhere to create a new tuning
+		fetch('http://localhost:8765/tunings', {
+		  method: 'post',
+		  headers: {
+			'Accept': 'application/json, text/plain, */*',
+			'Content-Type': 'application/json'
+		  },
+		  body: JSON.stringify({id: this.state.lastId, description: this.state.description, notes: this.state.notes})
+		})
+		window.location.reload();
     }
     render() {
         return (
@@ -74,12 +103,12 @@ class AddView extends React.Component {
                     </div>
                 }>
                 <h5>Description</h5>
-                <div className='input-field'>
+                <div>
                     <input type="text" placeholder="Tuning Name" name="description" value={this.state.description} onChange={(value) => this.onChange(value)} />
                     <label>{this.state.errorMessageD}</label>
                 </div>
                 <h5>Notes</h5>
-                <div className='input-field'>
+                <div>
                     <input type="text" placeholder="e, a, d, g, b, e" name="notes" value={this.state.notes} onChange={(value) => this.onChange(value)} />
                     <label>{this.state.errorMessageN}</label>
                 </div>
