@@ -1,1 +1,1 @@
-web:sh src/main/webapp
+web: java $JAVA_OPTS -cp src/main/java/com/khs/guitar/dataserver/*
