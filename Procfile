@@ -1,1 +1,1 @@
-web: node src/index.js
+web:sh src/main/webapp
