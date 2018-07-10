@@ -3,7 +3,7 @@ import Sound from 'react-sound';
 import '../css/index.css';
 import '../css/materialize.min.css';
 
-class Strum extends React.Component{
+class Chord extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -17,7 +17,7 @@ class Strum extends React.Component{
     }
 
     newFinished(){
-        this.setState({status: 'STOPPED'});
+        this.setState({status: 'STOPPED'})  ;
         this.props.isStopped();
     }
 
@@ -35,7 +35,7 @@ class Strum extends React.Component{
                     onClick={() => this.newClick()} 
                     class="btn-small blue darken-4 chord-button" 
                     disabled={ this.state.status === 'PLAYING' ? true : false }>
-                    <i class="material-icons right">play_arrow</i>strum</a>
+                    <i class="material-icons right">play_arrow</i>play</a>
             </div>
         );
     }
@@ -52,4 +52,4 @@ function buildAudio(note, index){
     return "/audio/"+note+sharp+"-"+index+".mp3";
 }
 
-export default Strum;
+export default Chord;

@@ -82,7 +82,7 @@
 
 .detail-view {
 	background: #e6e6e6;
-	padding-bottom: 270px;
+	padding-bottom: 315px;
 }
 
 .detail-back {
@@ -152,13 +152,7 @@
 
 .chord-button {
 	position: absolute;
-   	left: 50%;
-   	top: 13%;
-}
-
-.tune-button {
-	position: absolute;
-   	left: 40%;
+   	left: 45.5%;
    	top: 13%;
 }
 
