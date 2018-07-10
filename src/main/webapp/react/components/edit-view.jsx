@@ -76,7 +76,7 @@ class Edit extends React.Component {
         return (
             <Modal
                 header='Edit Tuning'
-                trigger={<a class="btn-small blue darken-4 tuning-edit"><i class="material-icons right">edit</i>edit</a>}
+                trigger={<a class="btn-small blue darken-4"><i class="material-icons right">edit</i>edit</a>}
                 actions={
                     <div class="modal-footer">
                         <a class="btn-small blue darken-4 modal-close" onClick={() => this.cancel()}><i class="material-icons right">cancel</i>cancel</a>

@@ -49,16 +49,8 @@
 	margin-top: -15px;
 	margin-left: 15px;
 	margin-bottom: 15px;
-	visibility: hidden;
 }
 
-.tuning-edit {
-	visibility: hidden;
-}
-
-.tuning-delete {
-	visibility: hidden;
-}
 
 .about-view {
 	background: #e6e6e6;
@@ -165,4 +157,16 @@
 .input-field input:focus {
    border-bottom: 1px solid #0d47a1 !important;
    box-shadow: 0 1px 0 0 #0d47a1 !important;
+ }
+
+ 
+ .login-button {
+	 position: absolute;
+	 left: 1250px;
+	 top: 1%;
+	 color: white;
+ }
+
+ .login-icon{
+	 color:white;
  }
