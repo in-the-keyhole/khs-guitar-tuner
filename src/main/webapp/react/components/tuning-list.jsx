@@ -21,7 +21,8 @@ class TuningList extends React.Component {
 
         this.state.tunings.forEach((tuning) =>{
            tunings.push(
-             <Tuning description={tuning.description} notes={tuning.notes} id={tuning.id}/>
+             <Tuning description={tuning.description} notes={tuning.notes} id={tuning.id}
+             isAdmin = {this.props.isAdmin}/>
            );
         });
         

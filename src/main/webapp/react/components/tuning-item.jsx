@@ -20,10 +20,10 @@ class Tuning extends React.Component {
                       </a>
                   </div>
                   <div className="card-buttons">
-                      <Edit description={this.props.description} notes={this.props.notes} id={this.props.id}/>
+                     {this.props.isAdmin && <Edit description={this.props.description} notes={this.props.notes} id={this.props.id}/>}
                   </div>
                   <div className="card-buttons">
-                      <Delete description={this.props.description} notes={this.props.notes} id={this.props.id}/>
+                      {this.props.isAdmin &&  <Delete description={this.props.description} notes={this.props.notes} id={this.props.id}/>}
                   </div>
                </div>
             </div>
