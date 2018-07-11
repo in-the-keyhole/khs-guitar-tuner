@@ -162,11 +162,20 @@
  
  .login-button {
 	 position: absolute;
-	 left: 1250px;
-	 top: 1%;
+	 left: 92%;
+	 top: 1.25%;
 	 color: white;
+	 cursor:pointer;
  }
 
  .login-icon{
 	 color:white;
+ }
+
+ .logout-button {
+	 position: absolute;
+	 left: 92%;
+	 top: 1.25%;
+	 color: white;
+	 cursor:pointer;
  }
