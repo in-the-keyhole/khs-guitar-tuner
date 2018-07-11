@@ -8,35 +8,36 @@ import LogoutView from './logout.jsx';
 import '../css/index.css';
 
 class TuningsView extends React.Component {
-    constructor(props){
-        super(props);
+    constructor( props ) {
+        super( props );
         this.state = {
-            admin:false
+            admin: false
         }
-        this.Login = this.Login.bind(this);
-        this.Logout = this.Logout.bind(this);
+        this.Login = this.Login.bind( this );
+        this.Logout = this.Logout.bind( this );
     }
-    Login(){
+    Login() {
         //this.setState({admin:true});
         //this.forceUpdate();
         window.sessionStorage.clear();
-        window.sessionStorage.setItem("isAdmin",true);
+        window.sessionStorage.setItem( "isAdmin", true );
         window.location.reload();
     }
-    Logout(){
+    Logout() {
         window.sessionStorage.clear();
         window.location.reload();
     }
     render() {
         return (
             <div className='page-view'>
-                <PageHeader title='Keyhole Guitar Tuner'/>
-                <ul class = "right">
-                <li>{!window.sessionStorage.getItem("isAdmin") && <LoginView Login = {() => this.Login()} />}</li>
-                <li>{window.sessionStorage.getItem("isAdmin") && <LogoutView Logout ={() => this.Logout()}/>}</li>
-                </ul>
-                <TuningList isAdmin = {window.sessionStorage.getItem("isAdmin")}/>
-                {window.sessionStorage.getItem("isAdmin") && <AddView />}
+                <PageHeader title='Keyhole Guitar Tuner' />
+                {//<li>{!window.sessionStorage.getItem("isAdmin") && <LoginView Login = {() => this.Login()} />}</li>
+                //<li>{window.sessionStorage.getItem("isAdmin") && <LogoutView Logout ={() => this.Logout()}/>}</li>
+                }
+                <div className="tunings-view">
+                    <TuningList isAdmin={window.sessionStorage.getItem( "isAdmin" )} />
+                </div>
+                {window.sessionStorage.getItem( "isAdmin" ) && <AddView />}
                 <PageFooter />
             </div>
         );
