@@ -8,7 +8,7 @@ class AboutView extends React.Component{
         return(
             <div className="about-view">
                 <div>
-                    <PageHeader title='Keyhole Software' />
+                    <PageHeader title='Keyhole Software' isMainPage = {false} />
                 <a href="/" class="btn-small blue darken-4 about-back"><i class="material-icons left">keyboard_backspace</i>back</a>
 
                 </div>

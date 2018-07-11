@@ -10,8 +10,13 @@
     color: white;
 }
 
-.header-about {
+.header-btn {
 	color: white;
+	cursor: pointer;
+}
+
+.header-about {
+	margin-right: 20px;
 }
 
 .footer-container {
@@ -163,9 +168,6 @@
 
  
  .login-button {
-	 position: absolute;
-	 left: 92%;
-	 top: 1.25%;
 	 color: white;
 	 cursor:pointer;
  }
@@ -175,9 +177,6 @@
  }
 
  .logout-button {
-	 position: absolute;
-	 left: 92%;
-	 top: 1.25%;
 	 color: white;
 	 cursor:pointer;
  }

@@ -30,7 +30,8 @@ class TuningsView extends React.Component {
     render() {
         return (
             <div className='page-view'>
-                <PageHeader title='Keyhole Guitar Tuner' />
+                <PageHeader title='Keyhole Guitar Tuner' isMainPage = {true} Login = {() => this.Login()}
+                Logout = {() => this.Logout()} isAdmin = {window.sessionStorage.getItem("isAdmin")}/>
                 {//<li>{!window.sessionStorage.getItem("isAdmin") && <LoginView Login = {() => this.Login()} />}</li>
                 //<li>{window.sessionStorage.getItem("isAdmin") && <LogoutView Logout ={() => this.Logout()}/>}</li>
                 }
