@@ -68,7 +68,7 @@ class AddView extends React.Component {
     }
     
     componentWillMount() {
-        fetch( 'JDBC_DATABASE_URL' )
+        fetch( 'DATABASE_URL' )
             .then( results => { return results.json(); } )
             .then( data => {
                 let tunings = data._embedded.tunings;
