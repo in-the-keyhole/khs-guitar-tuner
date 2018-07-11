@@ -68,7 +68,7 @@ class AddView extends React.Component {
     }
     
     componentWillMount() {
-        fetch( 'http://ec2-50-19-105-188.compute-1.amazonaws.com:5809/dc7snietmf0at2?sslmode=required' )
+        fetch( 'http://ec2-50-19-105-188.compute-1.amazonaws.com:80/dc7snietmf0at2?sslmode=required' )
             .then( results => { return results.json(); } )
             .then( data => {
                 let tunings = data._embedded.tunings;
