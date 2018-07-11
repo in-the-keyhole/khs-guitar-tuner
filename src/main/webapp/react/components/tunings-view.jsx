@@ -4,6 +4,7 @@ import TuningList from './tuning-list.jsx';
 import AddView from './add-view';
 import PageFooter from './footer.jsx';
 import LoginView from './login.jsx';
+import LogoutView from './logout.jsx';
 import '../css/index.css';
 
 class TuningsView extends React.Component {
@@ -13,21 +14,29 @@ class TuningsView extends React.Component {
             admin:false
         }
         this.Login = this.Login.bind(this);
+        this.Logout = this.Logout.bind(this);
     }
     Login(){
-        this.setState({admin:true});
-        this.forceUpdate();
+        //this.setState({admin:true});
+        //this.forceUpdate();
+        window.sessionStorage.clear();
+        window.sessionStorage.setItem("isAdmin",true);
+        window.location.reload();
     }
-    
+    Logout(){
+        window.sessionStorage.clear();
+        window.location.reload();
+    }
     render() {
         return (
             <div className='page-view'>
-                <PageHeader title='Keyhole Guitar Tuner' />
+                <PageHeader title='Keyhole Guitar Tuner'/>
                 <ul class = "right">
-                <li><LoginView Login = {() => this.Login()} /></li>
+                <li>{!window.sessionStorage.getItem("isAdmin") && <LoginView Login = {() => this.Login()} />}</li>
+                <li>{window.sessionStorage.getItem("isAdmin") && <LogoutView Logout ={() => this.Logout()}/>}</li>
                 </ul>
-                <TuningList isAdmin = {this.state.admin}/>
-                {this.state.admin && <AddView isAdmin/>}
+                <TuningList isAdmin = {window.sessionStorage.getItem("isAdmin")}/>
+                {window.sessionStorage.getItem("isAdmin") && <AddView />}
                 <PageFooter />
             </div>
         );
