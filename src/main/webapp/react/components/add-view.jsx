@@ -75,7 +75,7 @@ class AddView extends React.Component {
                 this.setState({lastTune: this.getLength(tunings) - 1});
                 this.setState( {lastId: tunings[this.state.lastTune].id + 1});
             } )
-            .catch(( error ) => { console.log( error ) } );
+            
             console.log(this.state.lastId);
 
             if(this.props.isAdmin){

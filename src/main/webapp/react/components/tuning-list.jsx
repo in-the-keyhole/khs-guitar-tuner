@@ -14,7 +14,7 @@ class TuningList extends React.Component {
             .then( data => {
                 this.setState( { tunings: data._embedded.tunings } );
             } )
-            .catch(( error ) => { console.log( error ) } );
+            
     }
     render(){
         const tunings = [];
