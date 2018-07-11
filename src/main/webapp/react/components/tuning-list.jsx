@@ -9,7 +9,7 @@ class TuningList extends React.Component {
         };
     }
     componentWillMount() {
-        fetch( 'jdbc:postgresql://ec2-50-19-105-188.compute-1.amazonaws.com:5432/dc7snietmf0at2?user=peougkqatnnvjb&password=9036dc1d392c9afe5c94b0ceb66480ce0cc5a20767ba3b97bad777a7872ea2df&sslmode=require' )
+        fetch( 'JDBC_DATABASE_URL' )
             .then( results => { return results.json(); } )
             .then( data => {
                 this.setState( { tunings: data._embedded.tunings } );
