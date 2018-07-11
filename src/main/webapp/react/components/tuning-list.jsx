@@ -9,7 +9,7 @@ class TuningList extends React.Component {
         };
     }
     componentWillMount() {
-        fetch( 'DATABASE_URL' )
+        fetch( 'System.getenv("DATABASE_URL")' )
             .then( results => { return results.json(); } )
             .then( data => {
                 this.setState( { tunings: data._embedded.tunings } );
