@@ -43,7 +43,7 @@ class PageDetailView extends React.Component {
                     }
                 } );
             } )
-            
+            .catch(( error ) => { console.log( error ) } );
     }
 
     uppercase( note ) {
