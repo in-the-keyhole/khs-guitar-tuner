@@ -32,8 +32,9 @@ class PageDetailView extends React.Component {
     }
     componentWillMount() {
         let currentComponent = this;
-        fetch( 'System.getenv("DATABASE_URL")' )
-            .then( results => { return results.json(); } )
+        fetch( 'http://ec2-50-19-105-188.compute-1.amazonaws.com:5809/dc7snietmf0at2?sslmode=required' )
+            .then( results => { console.log(results);
+            return results.json(); } )
             .then( data => {
                 let tunings = data._embedded.tunings;
                 tunings.forEach(( tuning ) => {
