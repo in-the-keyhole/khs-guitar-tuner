@@ -74,7 +74,7 @@ class PageDetailView extends React.Component {
 
         return (
             <div className="detail-view">
-                <PageHeader title={this.state.desc} />
+                <PageHeader title={this.state.desc} isMainPage = {false}/>
                 <a href="/" class="btn-small blue darken-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
                 <div className="detail-inst">
                     <div className='detail-inst-header'>
