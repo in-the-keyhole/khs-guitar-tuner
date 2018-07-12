@@ -81,8 +81,7 @@ class LoginView extends React.Component{
     }
     newClick(){
         if(!this.state.isCorrectUser || !this.state.isCorrectPassword){
-            //change this to a popup
-            alert("Incorrect username or password");
+            window.Materialize.toast("Incorrect username or password",3000, "blue");
             this.setState({curUserName: '', curPassword: '', isCorrectPassword:false , isCorrectUser:false});
         }
         else{

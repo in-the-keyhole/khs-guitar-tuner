@@ -16,8 +16,7 @@ class AddView extends React.Component {
             list: [],
             tunings: [],
             lastTune: 0,
-            lastId: 0,
-            styleString: 'hidden'
+            lastId: 0
         }
         this.onChange = this.onChange.bind(this);
     }
@@ -77,15 +76,9 @@ class AddView extends React.Component {
             } )
             .catch(( error ) => { console.log( error ) } );
             console.log(this.state.lastId);
-
-            if(this.props.isAdmin){
-                this.setState({styleString: 'visable'});
-                
-            }
     }
     
     handleClick(event) {
-        //send tuning name and notes to somewhere to create a new tuning
 		fetch('http://localhost:8765/tunings', {
 		  method: 'post',
 		  headers: {
@@ -97,13 +90,6 @@ class AddView extends React.Component {
 		window.location.reload();
     }
     render() {
-        const styles = {
-            containerStyle: {
-                visibility: this.state.styleString,
-            }
-        };
-        const { containerStyle } = styles;
-
         return (
             <Modal
                 header='Add Tuning' trigger={<a class='btn-floating btn-large blue darken-4 tuning-add'><i class="material-icons right">add</i></a>}

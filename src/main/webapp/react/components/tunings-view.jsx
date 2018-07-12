@@ -10,15 +10,10 @@ import '../css/index.css';
 class TuningsView extends React.Component {
     constructor( props ) {
         super( props );
-        this.state = {
-            admin: false
-        }
         this.Login = this.Login.bind( this );
         this.Logout = this.Logout.bind( this );
     }
     Login() {
-        //this.setState({admin:true});
-        //this.forceUpdate();
         window.sessionStorage.clear();
         window.sessionStorage.setItem( "isAdmin", true );
         window.location.reload();
@@ -32,9 +27,6 @@ class TuningsView extends React.Component {
             <div className='page-view'>
                 <PageHeader title='Keyhole Guitar Tuner' isMainPage = {true} Login = {() => this.Login()}
                 Logout = {() => this.Logout()} isAdmin = {window.sessionStorage.getItem("isAdmin")}/>
-                {//<li>{!window.sessionStorage.getItem("isAdmin") && <LoginView Login = {() => this.Login()} />}</li>
-                //<li>{window.sessionStorage.getItem("isAdmin") && <LogoutView Logout ={() => this.Logout()}/>}</li>
-                }
                 <div className="tunings-view">
                     <TuningList isAdmin={window.sessionStorage.getItem( "isAdmin" )} />
                 </div>
