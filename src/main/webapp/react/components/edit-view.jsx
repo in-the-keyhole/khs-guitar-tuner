@@ -87,7 +87,7 @@ class Edit extends React.Component {
                 }>
                 <h5>Description</h5>
                 <div className='input-field'>
-                    <input type="text" name="description" value={this.state.description} onChange={(value) => this.onChange(value)}
+                    <input type="text" name="description" value={this.state.description} maxLength='35' onChange={(value) => this.onChange(value)}
                         placeholder="Tuning Name" />
                     <label>{this.state.errorMessD}</label>
                 </div>

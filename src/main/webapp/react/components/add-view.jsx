@@ -70,11 +70,13 @@ class AddView extends React.Component {
             .then( results => { return results.json(); } )
             .then( data => {
                 let tunings = data._embedded.tunings;
-                this.setState({lastTune: this.getLength(tunings) - 1});
-                this.setState( {lastId: tunings[this.state.lastTune].id + 1});
+                let maxId;
+                tunings.forEach(tuning => {
+                    maxId = tuning.id;
+                });
+                this.setState( {lastId: maxId + 1});
             } )
             .catch(( error ) => { console.log( error ) } );
-            console.log(this.state.lastId);
     }
     
     handleClick(event) {
@@ -103,7 +105,7 @@ class AddView extends React.Component {
                 }>
                 <h5>Description</h5>
                 <div className='input-field'>
-                    <input type="text" placeholder="Tuning Name" name="description" value={this.state.description} onChange={(value) => this.onChange(value)} />
+                    <input type="text" placeholder="Tuning Name" name="description" value={this.state.description} maxLength='35' onChange={(value) => this.onChange(value)} />
                     <label>{this.state.errorMessageD}</label>
                 </div>
                 <h5>Notes</h5>
