@@ -4,9 +4,6 @@ import '../css/index.css';
 import '../css/materialize.min.css';
 
 class LogoutView extends React.Component{
-    constructor(props){
-        super(props);
-    }
     newClick(){
         this.props.Logout();
     }

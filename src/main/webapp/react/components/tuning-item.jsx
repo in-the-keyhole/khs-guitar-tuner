@@ -5,6 +5,13 @@ import '../css/index.css';
 import '../css/materialize.min.css';
 
 class Tuning extends React.Component {
+    constructor(props){
+        super(props);
+        this.reloadUpdate = this.reloadUpdate.bind(this);
+    }
+    reloadUpdate(updatedTuning){
+        this.props.reloadUpdate(updatedTuning);
+    }
     render(){
         return(
             <div class="card blue-grey darken-4">
@@ -20,7 +27,7 @@ class Tuning extends React.Component {
                       </a>
                   </div>
                   <div className="card-buttons">
-                     {this.props.isAdmin && <Edit description={this.props.description} notes={this.props.notes} id={this.props.id}/>}
+                     {this.props.isAdmin && <Edit description={this.props.description} notes={this.props.notes} id={this.props.id} reloadUpdate={this.reloadUpdate}/>}
                   </div>
                   <div className="card-buttons">
                       {this.props.isAdmin &&  <Delete description={this.props.description} notes={this.props.notes} id={this.props.id}/>}

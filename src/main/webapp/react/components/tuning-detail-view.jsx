@@ -32,7 +32,7 @@ class PageDetailView extends React.Component {
     }
     componentWillMount() {
         let currentComponent = this;
-        fetch( 'System.getenv("DATABASE_URL")' )
+        fetch( 'http://localhost:8765/tunings' )
             .then( results => { return results.json(); } )
             .then( data => {
                 let tunings = data._embedded.tunings;

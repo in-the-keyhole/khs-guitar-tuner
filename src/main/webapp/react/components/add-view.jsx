@@ -13,7 +13,6 @@ class AddView extends React.Component {
             errorMessageN: '',
             saveDismiss: true,
             errorMessageD: '',
-            list: [],
             tunings: [],
             lastTune: 0,
             lastId: 0,
@@ -68,7 +67,7 @@ class AddView extends React.Component {
     }
     
     componentWillMount() {
-        fetch( 'System.getenv("DATABASE_URL")' )
+        fetch( 'http://localhost:8765/tunings' )
             .then( results => { return results.json(); } )
             .then( data => {
                 let tunings = data._embedded.tunings;
@@ -94,16 +93,10 @@ class AddView extends React.Component {
 		  },
 		  body: JSON.stringify({id: this.state.lastId, description: this.state.description, notes: this.state.notes})
 		})
-		window.location.reload();
+		let newTun = {id: this.state.lastId, description: this.state.description, notes: this.state.notes};
+		this.props.reloadNew(newTun);
     }
     render() {
-        const styles = {
-            containerStyle: {
-                visibility: this.state.styleString,
-            }
-        };
-        const { containerStyle } = styles;
-
         return (
             <Modal
                 header='Add Tuning' trigger={<a class='btn-floating btn-large blue darken-4 tuning-add'><i class="material-icons right">add</i></a>}

@@ -70,7 +70,8 @@ class Edit extends React.Component {
 		  },
 		  body: JSON.stringify({id: this.props.id, description: this.state.description, notes: this.state.notes})
 		})
-		window.location.reload();
+		let updatedTun = {id: this.props.id, description: this.state.description, notes: this.state.notes};
+        this.props.reloadUpdate(updatedTun);
     }
     render() {
         return (

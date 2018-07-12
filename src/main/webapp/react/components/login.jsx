@@ -22,7 +22,6 @@ class LoginView extends React.Component{
         this.getInfo()
     }
     getInfo(){
-        let text = '';
         let list = '';
         fetch(Text)
         .then((r) => r.text())
