@@ -88,6 +88,7 @@ class AddView extends React.Component {
 		})
 		let newTun = {id: this.state.lastId, description: this.state.description, notes: this.state.notes};
 		this.props.reloadNew(newTun);
+		this.setState({description: '', notes: '', lastId: this.state.lastId + 1});
     }
     render() {
         return (

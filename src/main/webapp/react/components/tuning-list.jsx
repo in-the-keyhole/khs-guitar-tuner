@@ -50,9 +50,22 @@ class TuningList extends React.Component {
             } );
         }
 
+        var left = [];
+        var right = [];
+        
+        let i;
+        for(i = 0; i < tunings.length; i++){
+            if(i % 2 === 0){
+                left.push(tunings[i]);
+            } else{
+                right.push(tunings[i]);
+            }
+        }
+        
         return (
             <div class="row">
-                <div class="col s12">{tunings}</div>
+                <div class="col s6">{left}</div>
+                <div class="col s6">{right}</div>
             </div>
         );
     }
