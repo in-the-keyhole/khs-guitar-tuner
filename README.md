@@ -57,3 +57,6 @@ then populate the database with the following information:
   * Find Boot Dashboard on STS Eclipse, you will see this application under local. Run it as a spring boot application.
   * Use npm start to start application
   * Once started it should take you to localhost:3000, there you can choose from different tunings and click the note to hear a sound.
+
+  * To log into the admin settings, the username is: admin and the password is: password
+  * If you wish to change the username and password, there is a text document info.txt in src/main/webapp/react that the program reads from

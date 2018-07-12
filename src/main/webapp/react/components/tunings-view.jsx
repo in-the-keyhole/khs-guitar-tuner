@@ -18,8 +18,6 @@ class TuningsView extends React.Component {
         this.reloadNew = this.reloadNew.bind(this);
     }
     Login() {
-        //this.setState({admin:true});
-        //this.forceUpdate();
         window.sessionStorage.clear();
         window.sessionStorage.setItem( "isAdmin", true );
         window.location.reload();
