@@ -9,7 +9,7 @@ class LogoutView extends React.Component{
     }
     render(){
         return(
-            <Modal header = "Logout?" trigger={<a><i color = "white" class="small material-icons">close</i></a>}
+            <Modal header = "Logout?" trigger={<a>Logout</a>}
             actions = {
                 <div class = "modal-footer">
                 <a class="btn-small blue darken-4 modal-close"><i class="material-icons right">cancel</i>cancel</a>
