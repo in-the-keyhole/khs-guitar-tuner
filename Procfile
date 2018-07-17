@@ -1,2 +1,2 @@
-web: java -cp target/classes/;target/dependency/* src.main.java.com.khs.guitar.dataserver.GuitarDataServerApplication
+web: java $JAVA_OPTS -cp target/classes/;target/dependency/* src.main.java.com.khs.guitar.dataserver.GuitarDataServerApplication
 
