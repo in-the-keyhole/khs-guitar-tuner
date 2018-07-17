@@ -66,7 +66,7 @@ class AddView extends React.Component {
     }
     
     componentWillMount() {
-        fetch( 'http://localhost:8765/tunings' )
+        fetch( '/api-tunings' )
             .then( results => { return results.json(); } )
             .then( data => {
                 let tunings = data._embedded.tunings;
