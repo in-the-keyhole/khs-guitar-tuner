@@ -1,2 +1,2 @@
-web: java -cp target/classes/;target/dependency/* m2e-wtp.web-resources.META-INF.maven.com.keyholesoftware.com.khs-guitar-tuner.pom.xml
+web: java -cp target/classes/;target/dependency/* src.main.java.com.khs.guitar.dataserver.GuitarDataServerApplication
 
