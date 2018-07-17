@@ -1,2 +1,1 @@
-web: npm start
-worker: java $JAVA_OPTS -cp target/classes/;target/dependency/* khs-guitar-tuner.war
+web: java -Dserver.port=$PORT target/khs-guitar-tuner.war
