@@ -90,7 +90,7 @@ class LoginView extends React.Component{
     }
     render(){
         return(
-            <Modal header = "Login" trigger={<a>Admin</a>}
+            <Modal header = "Login" trigger={<a>Admin Login</a>}
             actions = {
                 <div class = "modal-footer">
                 <a class="btn-small blue darken-4 modal-close" onClick = {() => this.cancel()}><i class="material-icons right">cancel</i>cancel</a>
