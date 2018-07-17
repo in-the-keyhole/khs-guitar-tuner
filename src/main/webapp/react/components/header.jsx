@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginView from './login.jsx';
 import LogoutView from './logout.jsx';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import '../css/index.css';
 import '../css/materialize.min.css';
 

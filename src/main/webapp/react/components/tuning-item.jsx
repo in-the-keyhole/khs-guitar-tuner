@@ -3,6 +3,7 @@ import Edit from './edit-view.jsx';
 import Delete from './delete-view.jsx';
 import '../css/index.css';
 import '../css/materialize.min.css';
+import { NavLink } from 'react-router-dom';
 
 class Tuning extends React.Component {
     constructor(props){
@@ -21,10 +22,10 @@ class Tuning extends React.Component {
                </div>
                <div class="card-action">
                   <div className="card-buttons">
-                      <a 
-                          href={'/tunings/'+this.props.id}
+                      <NavLink 
+                          to={'/tunings/'+this.props.id}
                           class="btn-small blue darken-4"><i class="material-icons right">folder</i>open
-                      </a>
+                      </NavLink>
                   </div>
                   <div className="card-buttons">
                      {this.props.isAdmin && <Edit description={this.props.description} notes={this.props.notes} id={this.props.id} reloadUpdate={this.reloadUpdate}/>}
