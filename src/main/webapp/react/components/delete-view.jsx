@@ -6,7 +6,7 @@ import '../css/materialize.min.css';
 class Delete extends React.Component {
 	 handleClick(event) {
         //send tuning name and notes to somewhere to create a new tuning
-		fetch('/api-tunings' + this.props.id, {
+		fetch('/api-tunings/' + this.props.id, {
 		  method: 'DELETE',
 		  headers: {
 			'Accept': 'application/json, text/plain, */*',

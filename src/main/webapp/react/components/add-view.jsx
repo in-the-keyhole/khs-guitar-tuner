@@ -80,7 +80,7 @@ class AddView extends React.Component {
     }
     
     handleClick(event) {
-		fetch('http://localhost:8765/tunings', {
+		fetch('/api-tunings', {
 		  method: 'post',
 		  headers: {
 			'Accept': 'application/json, text/plain, */*',
