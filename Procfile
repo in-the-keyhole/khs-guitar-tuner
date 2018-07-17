@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT target/khs-guitar-tuner.war
+web: java -Dserver.port=$PORT -jar target/khs-guitar-tuner.war
