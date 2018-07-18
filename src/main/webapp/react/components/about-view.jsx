@@ -21,6 +21,7 @@ import PageHeader from './header.jsx';
 import '../css/index.css';
 import '../css/materialize.min.css';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class AboutView extends React.Component{
     render(){
@@ -34,7 +35,7 @@ class AboutView extends React.Component{
                 <div className="about-body">
                     <h3>React Guitar Tuner Application</h3>
                     <p>
-                        <label className="about-label">Built by <NavLink to="//www.keyholesoftware.com">Keyhole Software</NavLink> using React components.</label>
+                        <label className="about-label">Built by <Link to="//www.keyholesoftware.com">Keyhole Software</Link> using React components.</label>
                     </p>
                     <label className="about-label">Select a listed guitar tuning, audio for each note in the tuning can be played.</label>
                 </div>
