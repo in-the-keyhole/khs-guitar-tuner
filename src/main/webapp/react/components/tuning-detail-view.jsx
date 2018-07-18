@@ -1,3 +1,21 @@
+/*Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+*/
+
 import React from 'react';
 import Sound from 'react-sound';
 import PageHeader from './header.jsx';
@@ -6,6 +24,7 @@ import Tune from './tune.jsx';
 import fret from "../fret2.jpg";
 import '../css/materialize.min.css';
 import '../css/index.css';
+import { NavLink } from 'react-router-dom';
 
 class PageDetailView extends React.Component {
     constructor( props ) {
@@ -75,7 +94,7 @@ class PageDetailView extends React.Component {
         return (
             <div className="detail-view">
                 <PageHeader title={this.state.desc} isMainPage = {false}/>
-                <a href="/" class="btn-small blue darken-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</a>
+                <NavLink to="/" class="btn-small blue darken-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</NavLink>
                 <div className="detail-inst">
                     <div className='detail-inst-header'>
                         <h4>{this.state.desc} Guitar Tuning:</h4>
