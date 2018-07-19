@@ -49,7 +49,7 @@ class TuningsView extends React.Component {
     }
     render() {
         return (
-            <div className='page-view' class="transition-item">
+            <div className='page-view'>
                 <PageHeader title='Keyhole Guitar Tuner' isMainPage = {true} Login = {() => this.Login()}
                 Logout = {() => this.Logout()} isAdmin = {window.sessionStorage.getItem("isAdmin")}/>
                 <div className="tunings-view">

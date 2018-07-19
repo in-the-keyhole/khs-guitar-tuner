@@ -21,16 +21,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TuningsView from './tunings-view.jsx';
 import AboutView from './about-view.jsx';
 import PageDetailView from './tuning-detail-view.jsx';
-import PageTransition from 'react-router-page-transition';
 
 class Navigation extends React.Component {
     render() {
         return (
             <BrowserRouter>
                 <Switch>
-                	<PageTransition>
                     <Route exact path='/' component={TuningsView} />
-                    </PageTransition>
                     <Route path='/about' component={AboutView} />
                     <Route path='/tunings/' component={PageDetailView} />
                 </Switch>
