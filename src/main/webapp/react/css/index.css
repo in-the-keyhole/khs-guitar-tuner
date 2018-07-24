@@ -108,7 +108,10 @@ under the License.
 .detail-image {
 	position: absolute;
    	left: 40%;
-   	top: 20%; 
+   	top: 20%;
+   	max-width: 100%;
+   	hieght: auto;
+   	 
 }
 
 .detail-note {
