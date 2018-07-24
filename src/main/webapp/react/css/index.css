@@ -113,6 +113,11 @@ under the License.
    	
    	 
 }
+img { 
+    max-width: 100%; 
+    height: auto; 
+    width: auto;
+}
 
 .detail-image-mobile {
 	position: absolute;
