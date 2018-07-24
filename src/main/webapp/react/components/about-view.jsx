@@ -35,7 +35,7 @@ class AboutView extends React.Component{
                 <div className="about-body">
                     <h3>React Guitar Tuner Application</h3>
                     <p>
-                        <label className="about-label">Built by <a href="//www.keyholesoftware.com" target="_blank"> using React components.</label>
+                        <label className="about-label">Built by <a href="//www.keyholesoftware.com" target="_blank">Keyhole Software</a> using React components.</label>
                     </p>
                     <label className="about-label">Select a listed guitar tuning, audio for each note in the tuning can be played.</label>
                 </div>
