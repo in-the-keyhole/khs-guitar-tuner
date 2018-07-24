@@ -110,11 +110,11 @@ class PageDetailView extends React.Component {
                 </div>
 
                 <Tune list={list} />
-                
+                <div class="show-on-medium-and-up">
                 <Strum list={list} isPlaying={() => this.handleChord()} isStopped={() => this.handleFinish()} />
                 <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
 
-                <div className="detail-image" class="show-on-medium-and-up">
+                <div className="detail-image">
                     <img src={fret} alt="Fret" />
                     <div class="row">
                         <div class="col 4"></div>
@@ -161,11 +161,12 @@ class PageDetailView extends React.Component {
                         </div>
                     </div>
                 </div>
-                
+                </div>
+                <div class="show-on-small">
                 <Strum list={list} isPlaying={() => this.handleChord()} isStopped={() => this.handleFinish()} />
                 <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
 
-                <div className="detail-image-mobile" class="show-on-small" height="75%" width="75%">
+                <div className="detail-image-mobile">
                     <img src={fret} alt="Fret" />
                     <div class="row">
                         <div class="col 4"></div>
@@ -211,6 +212,7 @@ class PageDetailView extends React.Component {
                             </span>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         );
