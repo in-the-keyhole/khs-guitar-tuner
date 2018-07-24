@@ -95,7 +95,7 @@ class PageDetailView extends React.Component {
             <div className="detail-view">
                 <PageHeader title={this.state.desc} isMainPage = {false}/>
                 <NavLink to="/" class="btn-small blue darken-4 detail-back"><i class="material-icons left">keyboard_backspace</i>back</NavLink>
-                <div className="detail-inst" class="flow-text">
+                <div className="detail-inst">
                     <div className='detail-inst-header'>
                         <h4>{this.state.desc} Guitar Tuning:</h4>
                     </div>
