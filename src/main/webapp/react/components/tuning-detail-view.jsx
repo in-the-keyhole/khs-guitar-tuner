@@ -167,7 +167,7 @@ class PageDetailView extends React.Component {
                 <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
 
                 <div className="detail-image-mobile">
-                    <img src={fret} alt="Fret" />
+                    <img src={fret} alt="Fret" height="50%" width="50%"/>
                     <div class="row">
                         <div class="col 4"></div>
                         <div class="col 1 detail-note first-note">
