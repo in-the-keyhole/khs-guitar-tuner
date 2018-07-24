@@ -110,7 +110,7 @@ class PageDetailView extends React.Component {
                 </div>
 
                 <Tune list={list} />
-                <div class="show-on-medium-and-up">
+               
                 <Strum list={list} isPlaying={() => this.handleChord()} isStopped={() => this.handleFinish()} />
                 <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
 
@@ -161,59 +161,8 @@ class PageDetailView extends React.Component {
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="show-on-small">
-                <Strum list={list} isPlaying={() => this.handleChord()} isStopped={() => this.handleFinish()} />
-                <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
-
-                <div className="detail-image-mobile">
-                    <img src={fret} alt="Fret" />
-                    <div class="row">
-                        <div class="col 4"></div>
-                        <div class="col 1 detail-note first-note">
-                            <span className="note"
-                                style={{ color: this.isPlaying( note0 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note0 )}>
-                                {this.uppercase( list[0] )}
-                            </span>
-                        </div>
-                        <div class="col 1 detail-note second-note">
-                            <span className="note"
-                                style={{ color: this.isPlaying( note1 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note1 )}>
-                                {this.uppercase( list[1] )}
-                            </span>
-                        </div>
-                        <div class="col 1 detail-note third-note">
-                            <span className="note"
-                                style={{ color: this.isPlaying( note2 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note2 )}>
-                                {this.uppercase( list[2] )}
-                            </span>
-                        </div>
-                        <div class="col 1 detail-note fourth-note">
-                            <span className="note"
-                                style={{ color: this.isPlaying( note3 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note3 )}>
-                                {this.uppercase( list[3] )}
-                            </span>                        </div>
-                        <div class="col 1 detail-note fifth-note">
-                            <span className="note"
-                                style={{ color: this.isPlaying( note4 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note4 )}>
-                                {this.uppercase( list[4] )}
-                            </span>
-                        </div>
-                        <div class="col 1 detail-note sixth-note">
-                            <span className="note"
-                                style={{ color: this.isPlaying( note5 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note5 )}>
-                                {this.uppercase( list[5] )}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                </div>
+               
+                
             </div>
         );
     }
