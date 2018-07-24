@@ -189,7 +189,7 @@ ul {
 }
 
 .chord-button {
-	position: relative;
+	position: absolute;
    	left: 50%;
    	top: 13%;
    	padding: 5px;
