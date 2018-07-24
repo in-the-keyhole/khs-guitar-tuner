@@ -33,8 +33,8 @@ class PageHeader extends React.Component {
                     	<div class="hide-on-small-only">
                         <li className='header-btn'>{this.props.isMainPage && this.props.isAdmin && <LogoutView Logout = {() => this.props.Logout()}/>}</li>
                         <li className='header-btn'>{this.props.isMainPage && !this.props.isAdmin && <LoginView Login = {() => this.props.Login()}/>}</li>
-                        </div>
                         <li className='header-btn header-about'><NavLink to="/about"><i class="small material-icons">help_outline</i></NavLink></li>
+                        </div>
                     </ul>
                 </div>
             </nav>
