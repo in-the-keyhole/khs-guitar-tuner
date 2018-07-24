@@ -110,8 +110,17 @@ under the License.
    	left: 40%;
    	top: 20%;
    	max-width: 100%;
-   	hieght: auto;
+   	
    	 
+}
+
+.detail-image-mobile {
+	position: absolute;
+   	left: 40%;
+   	top: 20%;
+   	max-width: 50%;
+   	max-height: 50%;
+	
 }
 
 .detail-note {
@@ -131,8 +140,7 @@ under the License.
 	font-size: 18px;
 	max-width:37%;
 	color: #4d4d4d;
-	font-size: 1.5vw;
-	font-size: 2vwmax
+	
 }
 
 .note {
@@ -177,7 +185,18 @@ under the License.
    	top: 13%;
 }
 
+.chord-button-mobile {
+	position: absolute;
+   	left: 50%;
+   	top: 13%;
+}
+
 .tune-button {
+	position: absolute;
+   	left: 40%;
+   	top: 13%;
+}
+.tune-button-mobile {
 	position: absolute;
    	left: 40%;
    	top: 13%;
