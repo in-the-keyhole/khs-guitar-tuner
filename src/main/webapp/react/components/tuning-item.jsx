@@ -42,7 +42,7 @@ class Tuning extends React.Component {
                   <div className="card-buttons">
                       <NavLink 
                           to={'/tunings/'+this.props.id}
-                          class="btn-small blue darken-4"><i class="material-icons right">folder</i><p class="flow-text">open</p>
+                          class="btn-small blue darken-4"><i class="material-icons right">folder</i>open
                       </NavLink>
                   </div>
                   <div className="card-buttons">
