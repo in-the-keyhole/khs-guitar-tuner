@@ -109,7 +109,7 @@ under the License.
 	position: absolute;
    	left: 40%;
    	top: 20%;
-   	max-width: 100%;
+   	width: auto;
    	
    	 
 }
