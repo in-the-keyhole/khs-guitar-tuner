@@ -35,7 +35,7 @@ class Tuning extends React.Component {
         return(
             <div class="card blue-grey darken-4">
                <div class="card-content white-text">
-                  <span class="card-title">{this.props.description}</span>
+                  <span class="card-title" class="flow-text">{this.props.description}</span>
                   <p>{this.props.notes}</p>
                </div>
                <div class="card-action">

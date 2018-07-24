@@ -22,7 +22,7 @@ under the License.
 }
 
 .header-title {
-    font-size: 30px;
+    font-size: 28px;
     font-family: Helvetica, Arial, sans-serif;
     padding-left: 20px;
     color: white;
@@ -61,7 +61,7 @@ under the License.
 	color: white;
 	float: none;
 	display: inline-block;
-	margin-right: 15px;
+	margin-right: 10px;
 }
 
 .tunings-view {
