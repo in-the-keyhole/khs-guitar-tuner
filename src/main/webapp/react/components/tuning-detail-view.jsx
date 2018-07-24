@@ -113,7 +113,7 @@ class PageDetailView extends React.Component {
                 <Strum list={list} isPlaying={() => this.handleChord()} isStopped={() => this.handleFinish()} />
                 <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
 
-                <div className="detail-image">
+                <div class="responsive-img" className="detail-image">
                     <img src={fret} alt="Fret" />
                     <div class="row">
                         <div class="col 4"></div>
