@@ -110,6 +110,7 @@ under the License.
    	left: 40%;
    	top: 20%;
    	width: auto;
+   	max-height: 90%;
    	
    	 
 }
@@ -117,6 +118,9 @@ img {
     max-width: 100%; 
     height: auto; 
     width: auto;
+}
+ul {
+	padding: 5px;
 }
 
 .detail-image-mobile {
@@ -194,12 +198,14 @@ img {
 	position: absolute;
    	left: 50%;
    	top: 13%;
+   	padding: 5px;
 }
 
 .tune-button {
 	position: absolute;
    	left: 40%;
    	top: 13%;
+   	padding: 5px;
 }
 .tune-button-mobile {
 	position: absolute;
