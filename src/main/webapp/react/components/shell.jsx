@@ -17,24 +17,21 @@ under the License.
 */
 
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import TuningsView from './tunings-view.jsx';
-import AboutView from './about-view.jsx';
-import PageDetailView from './tuning-detail-view.jsx';
-import PageShell from './shell.jsx';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-class Navigation extends React.Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path='/' component={PageShell(TuningsView)} />
-                    <Route path='/about' component={PageShell(AboutView)} />
-                    <Route path='/tunings/' component={PageShell(PageDetailView)} />
-                </Switch>
-            </BrowserRouter>
-        );
-    }
-}
+const PageShell = Page => {
+return props =>
+    <div className="page">
+    <ReactCSSTransitionGroup
+        transitionAppear={true}
+        transitionAppearTimeout={6000}
+        transitionEnterTimeout={600}
+        transitionLeaveTimeout={500}
+        transitionName="SlideIn"
+      > 
+        <Page {...props} />
+        </ReactCSSTransitionGroup>
+    </div>;
+};
 
-export default Navigation;
+export default PageShell;

@@ -197,3 +197,35 @@ under the License.
 	 color: white;
 	 cursor:pointer;
  }
+ 
+ .SlideIn-appear {
+  transform: translateX(3%);
+  opacity: 0.75;
+}
+.SlideIn-appear.SlideIn-appear-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all .6s linear;
+  
+}
+.SlideIn-enter {
+    opacity: 0.95;
+    transform: translateX(30%);
+    
+}
+.SlideIn-enter.SlideIn-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s linear 0.4s;
+}
+.SlideIn-leave {
+    opacity: 1.0;
+    transform: translateX(0);
+}
+.SlideIn-leave.SlideIn-leave-active {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    transform: translateX(-6%);
+    transition: all 0.8s linear;
+}
