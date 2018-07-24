@@ -190,28 +190,17 @@ ul {
 
 .chord-button {
 	position: fixed;
-   	left: 50%;
+   	right: 40%;
    	top: 13%;
    	padding: 5px;
 }
 
-.chord-button-mobile {
-	position: absolute;
-   	left: 50%;
-   	top: 13%;
-   	padding: 5px;
-}
 
 .tune-button {
 	position: fixed;
    	left: 40%;
    	top: 13%;
    	padding: 5px;
-}
-.tune-button-mobile {
-	position: absolute;
-   	left: 40%;
-   	top: 13%;
 }
 
 .input-field input:focus {
