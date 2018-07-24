@@ -28,7 +28,7 @@ class PageHeader extends React.Component {
         return (
             <nav>
                 <div class="nav-wrapper header-container">
-                    <a className="header-title">{this.props.title}</a>
+                    <a className="header-title" class="flow-text">{this.props.title}</a>
                     <ul class="right">
                         <li className='header-btn'><div class="hide-on-small-only">{this.props.isMainPage && this.props.isAdmin && <LogoutView Logout = {() => this.props.Logout()}/>}</div></li>
                         <li className='header-btn'><div class="hide-on-small-only">{this.props.isMainPage && !this.props.isAdmin && <LoginView Login = {() => this.props.Login()}/>}</div></li>
