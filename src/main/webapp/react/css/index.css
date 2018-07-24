@@ -110,7 +110,7 @@ under the License.
    	left: 40%;
    	top: 20%;
    	width: auto;
-   	max-height: 90%;
+   	max-height: 80%;
    	
    	 
 }
@@ -140,8 +140,7 @@ ul {
 }
 
 .detail-inst-header {
-	color: black;
-	padding: 2px;	
+	color: black;	
 }
 
 .detail-inst {
@@ -190,7 +189,7 @@ ul {
 }
 
 .chord-button {
-	position: absolute;
+	position: fixed;
    	left: 50%;
    	top: 13%;
    	padding: 5px;
@@ -204,7 +203,7 @@ ul {
 }
 
 .tune-button {
-	position: absolute;
+	position: fixed;
    	left: 40%;
    	top: 13%;
    	padding: 5px;
