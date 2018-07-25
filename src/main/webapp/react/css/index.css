@@ -180,8 +180,8 @@ ul {
 }
 
 .chord-button {
-	position: fixed;
-   	left: 50%;
+	position: absolute;
+   	left: 40%;
    	top: 85%;
    	padding: 5px;
 }
