@@ -111,7 +111,7 @@ class PageDetailView extends React.Component {
 
                 <Tune list={list} />
                
-                <div class="hide-on-small-only"><Strum list={list} isPlaying={() => this.handleChord()} isStopped={() => this.handleFinish()} /></div>
+                <Strum list={list} isPlaying={() => this.handleChord()} isStopped={() => this.handleFinish()} />
                 <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
 
                 <div className="detail-image">
