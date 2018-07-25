@@ -104,8 +104,8 @@ class PageDetailView extends React.Component {
                             played on a loop. Click it again to stop the loop.</li><br />
                         <li>Click on <em>TUNE</em> for each note to be played<br />
                             five times. Click it again to stop the tuning cycle.</li><br />
-                        <li>Click on <em>STRUM</em> to hear the notes<br />
-                            played in one strum.</li>
+                        <li><div class="hide-on-small-only">Click on <em>STRUM</em> to hear the notes<br />
+                            played in one strum.</div></li>
                     </ul>
                 </div>
 
