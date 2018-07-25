@@ -189,9 +189,9 @@ ul {
 }
 
 .chord-button {
-	position: absolute;
-   	left: 40%;
-   	top: 85%;
+	position: fixed;
+   	left: 50%;
+   	top: 13%;
    	padding: 5px;
 }
 
