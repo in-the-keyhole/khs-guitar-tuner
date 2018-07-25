@@ -107,7 +107,7 @@ under the License.
 
 .detail-image {
 	position: fixed;
-   	left: 40%;
+   	left: 45%;
    	top: 20%;
    	width: auto;
    	max-height: 80%;
@@ -186,14 +186,14 @@ h4 {
 
 .chord-button {
 	position: fixed;
-   	left: 49%;
+   	left: 54%;
    	top: 13%;
 }
 
 
 .tune-button {
 	position: fixed;
-   	left: 40%;
+   	left: 45%;
    	top: 13%;
 }
 
