@@ -106,7 +106,7 @@ under the License.
 }
 
 .detail-image {
-	position: absolute;
+	position: fixed;
    	left: 40%;
    	top: 20%;
    	width: auto;
@@ -121,15 +121,6 @@ img {
 }
 ul {
 	padding: 3px;
-}
-
-.detail-image-mobile {
-	position: absolute;
-   	left: 40%;
-   	top: 20%;
-   	max-width: 50%;
-   	max-height: 50%;
-	
 }
 
 .detail-note {
