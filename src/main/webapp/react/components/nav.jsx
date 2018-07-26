@@ -26,7 +26,6 @@ import PageShell from './shell.jsx';
 class Navigation extends React.Component {
     render() {
         return (
-            <BrowserRouter>
                     <Route exact path='/' component={PageShell(TuningsView)}>
 					<IndexRoute component = {PageShell(TuningsView)}/>
                     <Route path='/about' component={PageShell(AboutView)} />
@@ -34,7 +33,6 @@ class Navigation extends React.Component {
                     <Route path='/error' component={PageShell(TuningsView)} />
                     <Route component={PageShell(TuningsView)}/>
 					<Route/>
-            </BrowserRouter>
         );
     }
 }
