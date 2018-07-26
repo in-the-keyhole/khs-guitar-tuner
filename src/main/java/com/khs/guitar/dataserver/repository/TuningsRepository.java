@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.khs.guitar.dataserver.model.Tunings;
 
-@RepositoryRestResource(collectionResourceRel = "tunings", path = "/api/tunings")
+@RepositoryRestResource(collectionResourceRel = "tunings", path = "/api-tunings")
 public interface TuningsRepository extends JpaRepository<Tunings,Long> {
 
 }

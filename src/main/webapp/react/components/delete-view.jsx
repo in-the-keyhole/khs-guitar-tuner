@@ -23,7 +23,7 @@ import '../css/materialize.min.css';
 
 class Delete extends React.Component {
 	 handleClick(event) {
-		fetch('/api/tunings/' + this.props.id, {
+		fetch('/api-tunings/' + this.props.id, {
 		  method: 'DELETE',
 		  headers: {
 			'Accept': 'application/json, text/plain, */*',

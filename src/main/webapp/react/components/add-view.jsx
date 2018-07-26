@@ -84,7 +84,7 @@ class AddView extends React.Component {
     }
     
     componentWillMount() {
-        fetch( '/api/tunings' )
+        fetch( '/api-tunings' )
             .then( results => { return results.json(); } )
             .then( data => {
                 let tunings = data._embedded.tunings;
@@ -98,7 +98,7 @@ class AddView extends React.Component {
     }
     
     handleClick(event) {
-		fetch('/api/tunings', {
+		fetch('/api-tunings', {
 		  method: 'post',
 		  headers: {
 			'Accept': 'application/json, text/plain, */*',

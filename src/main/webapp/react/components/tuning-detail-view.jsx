@@ -51,7 +51,7 @@ class PageDetailView extends React.Component {
     }
     componentWillMount() {
         let currentComponent = this;
-        fetch( '/api/tunings' )
+        fetch( '/api-tunings' )
             .then( results => { return results.json(); } )
             .then( data => {
                 let tunings = data._embedded.tunings;
