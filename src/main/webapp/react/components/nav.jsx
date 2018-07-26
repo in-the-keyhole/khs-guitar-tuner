@@ -17,7 +17,7 @@ under the License.
 */
 
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, browserHistory } from 'react-router-dom';
 import TuningsView from './tunings-view.jsx';
 import AboutView from './about-view.jsx';
 import PageDetailView from './tuning-detail-view.jsx';
@@ -28,7 +28,7 @@ class Navigation extends React.Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route exact path='/' component={PageShell(TuningsView)} />
+                    <Route exact path='/' component={PageShell(TuningsView)} history = {browserHistory} />
                     <Route path='/about' component={PageShell(AboutView)} />
                     <Route path='/tunings/' component={PageShell(PageDetailView)} />
                     <Route path='/error' component={PageShell(TuningsView)} />
