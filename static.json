@@ -2,6 +2,6 @@
   "root": "build/",
   "clean_urls": false,
   "routes": {
-    "/**": "index.js"
+    "/**": "tunings-view.jsx"
   }
 }
