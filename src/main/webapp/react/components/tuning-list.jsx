@@ -28,7 +28,7 @@ class TuningList extends React.Component {
         this.reloadUpdate = this.reloadUpdate.bind( this );
     }
     componentWillMount() {
-        fetch( '/api-tunings' )
+        fetch( '/api/tunings' )
             .then( results => { return results.json(); } )
             .then( data => {
                 this.setState( { tunings: data._embedded.tunings } );

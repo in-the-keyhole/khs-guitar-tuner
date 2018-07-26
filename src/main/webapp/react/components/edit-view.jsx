@@ -80,7 +80,7 @@ class Edit extends React.Component {
     }
     handleClick(event) {
         this.setState({ saveDismiss: true, errorMessageD: '', errorMessageN: '' });
-        fetch('/api-tunings', {
+        fetch('/api/tunings', {
 		  method: 'post',
 		  headers: {
 			'Accept': 'application/json, text/plain, */*',
