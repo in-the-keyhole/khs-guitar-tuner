@@ -54,6 +54,10 @@ Installating and Running Locally
 >	tuning_id, tuning_description, tuning_notes)
 >	VALUES (7, 'OPEN D', 'd,a,d,f#,a,d');
 
+	INSERT INTO public."tunings"(
+>	tuning_id, tuning_description, tuning_notes)
+>	VALUES (8, 'OPEN G', 'd,g,d,g,b,d');
+
 16. You will need to change the fetch calls in these locations to point to your local database: `tunings-list.jsx`, `tuning-detail-view.jsx`, `edit-view.jsx`, `delete-view.jsx`, `add-view.jsx (2x)`
 17. Also, you will need to change the `application.properties` file found in `src/main/resources`
 18. Find Boot Dashboard on STS Eclipse, you will see this application under local. Run it as a spring boot application.
