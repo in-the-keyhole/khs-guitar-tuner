@@ -7,7 +7,7 @@ Server side API implemented using Java Endpoint
 
 Visit our site here: www.khsguitartuner.com
 
-Installating and Running Locally
+Installing and Running Locally
 ================================
 
 1. Clone Repo 
@@ -63,6 +63,6 @@ Installating and Running Locally
 18. Find Boot Dashboard on STS Eclipse, you will see this application under local. Run it as a spring boot application.
 19. Use npm start to start application
   
-Once started it should take you to `localhost:3000`, there you can choose from different tunings and click the note to hear a sound.
+Once started it should take you to `localhost:3000`, there you can choose from different tunings.
 
-If you wish to change the username and password, there is a text document `info.txt` in `src/main/webapp/react` that the program reads from
+If you wish to change the username and password, you may do so in `src/main/webapp/react/info.txt`
