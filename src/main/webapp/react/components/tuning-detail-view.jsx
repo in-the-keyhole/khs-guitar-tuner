@@ -83,13 +83,14 @@ class PageDetailView extends React.Component {
 
     render() {
         var list = this.state.notes.split( ',' );
-
-        var note0 = buildAudio( list[0], '0' );
-        var note1 = buildAudio( list[1], '1' );
-        var note2 = buildAudio( list[2], '2' );
-        var note3 = buildAudio( list[3], '3' );
-        var note4 = buildAudio( list[4], '4' );
-        var note5 = buildAudio( list[5], '5' );
+        var audioList = [];
+        
+        audioList.push(buildAudio( list[0], '0' ));
+        audioList.push(buildAudio( list[1], '1' ));
+        audioList.push(buildAudio( list[2], '2' ));
+        audioList.push(buildAudio( list[3], '3' ));
+        audioList.push(buildAudio( list[4], '4' ));
+        audioList.push(buildAudio( list[5], '5' ));
 
         return (
             <div className="detail-view">
@@ -109,9 +110,8 @@ class PageDetailView extends React.Component {
                     </ul>
                 </div>
 
-                <Tune list={list} />
-               
-                <div class="hide-on-med-and-down"><Strum list={list} isPlaying={() => this.handleChord()} isStopped={() => this.handleFinish()} /></div>
+                <Tune list={audioList} />
+                <div class="hide-on-med-and-down"><Strum list={audioList} isPlaying={() => this.handleChord()} isStopped={() => this.handleFinish()} /></div>
                 <Sound url={this.state.note} playStatus={this.state.status} loop={true} playFromPosition={250} />
 
                 <div className="detail-image">
@@ -120,42 +120,42 @@ class PageDetailView extends React.Component {
                         <div class="col 4"></div>
                         <div class="col 1 detail-note first-note">
                             <span className="note"
-                                style={{ color: this.isPlaying( note0 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note0 )}>
+                                style={{ color: this.isPlaying( audioList[0] ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.newClick( audioList[0] )}>
                                 {this.uppercase( list[0] )}
                             </span>
                         </div>
                         <div class="col 1 detail-note second-note">
                             <span className="note"
-                                style={{ color: this.isPlaying( note1 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note1 )}>
+                                style={{ color: this.isPlaying( audioList[1] ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.newClick( audioList[1] )}>
                                 {this.uppercase( list[1] )}
                             </span>
                         </div>
                         <div class="col 1 detail-note third-note">
                             <span className="note"
-                                style={{ color: this.isPlaying( note2 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note2 )}>
+                                style={{ color: this.isPlaying( audioList[2] ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.newClick( audioList[2] )}>
                                 {this.uppercase( list[2] )}
                             </span>
                         </div>
                         <div class="col 1 detail-note fourth-note">
                             <span className="note"
-                                style={{ color: this.isPlaying( note3 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note3 )}>
+                                style={{ color: this.isPlaying( audioList[3] ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.newClick( audioList[3] )}>
                                 {this.uppercase( list[3] )}
                             </span>                        </div>
                         <div class="col 1 detail-note fifth-note">
                             <span className="note"
-                                style={{ color: this.isPlaying( note4 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note4 )}>
+                                style={{ color: this.isPlaying( audioList[4] ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.newClick( audioList[4] )}>
                                 {this.uppercase( list[4] )}
                             </span>
                         </div>
                         <div class="col 1 detail-note sixth-note">
                             <span className="note"
-                                style={{ color: this.isPlaying( note5 ) ? '#0d47a1' : 'white' }}
-                                onClick={() => this.newClick( note5 )}>
+                                style={{ color: this.isPlaying( audioList[5] ) ? '#0d47a1' : 'white' }}
+                                onClick={() => this.newClick( audioList[5] )}>
                                 {this.uppercase( list[5] )}
                             </span>
                         </div>

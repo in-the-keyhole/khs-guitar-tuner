@@ -42,32 +42,21 @@ class Strum extends React.Component{
     render(){
         return(
             <div>
-                <Sound url={buildAudio(this.props.list[0], '0')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
-                <Sound url={buildAudio(this.props.list[1], '1')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
-                <Sound url={buildAudio(this.props.list[2], '2')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
-                <Sound url={buildAudio(this.props.list[3], '3')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
-                <Sound url={buildAudio(this.props.list[4], '4')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
-                <Sound url={buildAudio(this.props.list[5], '5')} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={this.props.list[0]} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={this.props.list[1]} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={this.props.list[2]} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={this.props.list[3]} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={this.props.list[4]} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
+                <Sound url={this.props.list[5]} autoLoad playFromPosition={250} playStatus={this.state.status} onFinishedPlaying={() => this.newFinished()}/>
         
                 <a 
                     onClick={() => this.newClick()} 
-                    class="btn-small blue darken-4 chord-button" 
+                    class="btn-small blue darken-4 strum-button" 
                     disabled={ this.state.status === 'PLAYING' ? true : false }>
                     <i class="material-icons right">play_arrow</i>strum</a>
             </div>
         );
     }
-}
-
-function buildAudio(note, index){
-    
-    var sharp = "";
-    if (note && note.indexOf("#") >=0 ) {
-        sharp="-sharp";
-        note = note.replace("#","");
-    }
-    
-    return "/audio/"+note+sharp+"-"+index+".mp3";
 }
 
 export default Strum;

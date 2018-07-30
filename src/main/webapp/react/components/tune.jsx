@@ -33,36 +33,29 @@ class Tune extends React.Component {
     startTune() {
         this.state.status === 'STOPPED' ? this.setState( { status: 'PLAYING' } ) : this.setState( { status: 'STOPPED', count: 0 } );
     }
-    handleAudio(AudioList){
+    handleAudio(){
         if(this.state.count < 5){
-            return AudioList[0];
+            return this.props.list[0];
         } else if(this.state.count < 10){
-            return AudioList[1];
+            return this.props.list[1];
         } else if(this.state.count < 15){
-            return AudioList[2];
+            return this.props.list[2];
         } else if(this.state.count < 20){
-            return AudioList[3];
+            return this.props.list[3];
         } else if(this.state.count < 25){
-            return AudioList[4];
+            return this.props.list[4];
         } else if(this.state.count < 30){
-            return AudioList[5];
+            return this.props.list[5];
         } else if(this.state.count === 30){
             this.setState({status: 'STOPPED', count: 0});
             return '';
         }
     }
     render() {
-        var AudioList =[];
-        AudioList.push(buildAudio( this.props.list[0], '0' ));
-        AudioList.push(buildAudio( this.props.list[1], '1' ));
-        AudioList.push(buildAudio( this.props.list[2], '2' ));
-        AudioList.push(buildAudio( this.props.list[3], '3' ));
-        AudioList.push(buildAudio( this.props.list[4], '4' ));
-        AudioList.push(buildAudio( this.props.list[5], '5' ));
         return (
             <div>
                 <Sound
-                    url={this.handleAudio(AudioList)}
+                    url={this.handleAudio()}
                     playStatus={this.state.status}
                     onFinishedPlaying={() => this.setState({count: this.state.count+1})}/>
 
@@ -73,15 +66,6 @@ class Tune extends React.Component {
             </div>
         );
     }
-}
-
-function buildAudio( note, index ) {
-    var sharp = "";
-    if ( note && note.indexOf( "#" ) >= 0 ) {
-        sharp = "-sharp";
-        note = note.replace( "#", "" );
-    }
-    return "/audio/" + note + sharp + "-" + index + ".mp3";
 }
 
 export default Tune;
