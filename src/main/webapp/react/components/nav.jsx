@@ -17,8 +17,7 @@ under the License.
 */
 
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import {browserHistory} from 'react-router';
+import { BrowserRouter, Route, Switch, browserHistory } from 'react-router-dom';
 import TuningsView from './tunings-view.jsx';
 import AboutView from './about-view.jsx';
 import PageDetailView from './tuning-detail-view.jsx';
