@@ -22,10 +22,10 @@ import PageHeader from './header.jsx';
 import '../css/index.css';
 import '../css/materialize.min.css';
 import { NavLink } from 'react-router-dom';
+import {browserHistory} from 'react-router';
 
 class AboutView extends React.Component{
 	componentWillUnmount(){
-		var browserHistory = ReactRouter.browserHistory;
 		browserHistory.push('/');
 	}
     render(){

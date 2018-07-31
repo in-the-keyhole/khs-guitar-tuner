@@ -18,6 +18,7 @@ under the License.
 
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {browserHistory} from 'react-router';
 import TuningsView from './tunings-view.jsx';
 import AboutView from './about-view.jsx';
 import PageDetailView from './tuning-detail-view.jsx';
@@ -25,7 +26,6 @@ import PageShell from './shell.jsx';
 
 class Navigation extends React.Component {
     render() {
-		var browserHistory = ReactRouter.browserHistory;
         return (
             <BrowserRouter history = {browserHistory}>
                 <Switch>
