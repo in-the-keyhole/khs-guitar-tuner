@@ -54,7 +54,7 @@ Installing and Running Locally
 >	tuning_id, tuning_description, tuning_notes)
 >	VALUES (7, 'OPEN D', 'd,a,d,f#,a,d');
 
-	INSERT INTO public."tunings"(
+>	INSERT INTO public."tunings"(
 >	tuning_id, tuning_description, tuning_notes)
 >	VALUES (8, 'OPEN G', 'd,g,d,g,b,d');
 
