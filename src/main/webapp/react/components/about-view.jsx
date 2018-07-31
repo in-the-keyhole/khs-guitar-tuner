@@ -24,6 +24,10 @@ import '../css/materialize.min.css';
 import { NavLink } from 'react-router-dom';
 
 class AboutView extends React.Component{
+	componentWillUnmount(){
+		var browserHistory = ReactRouter.browserHistory;
+		browserHistory.push('/');
+	}
     render(){
         return(
             <div className="about-view">

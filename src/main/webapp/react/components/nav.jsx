@@ -25,8 +25,9 @@ import PageShell from './shell.jsx';
 
 class Navigation extends React.Component {
     render() {
+		var browserHistory = ReactRouter.browserHistory;
         return (
-            <BrowserRouter>
+            <BrowserRouter history = {browserHistory}>
                 <Switch>
                     <Route exact path='/' component={PageShell(TuningsView)} />
                     <Route path='/about' component={PageShell(AboutView)} />
