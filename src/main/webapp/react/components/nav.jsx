@@ -32,7 +32,7 @@ class Navigation extends React.Component {
                     <Route path='/about' component={PageShell(AboutView)} />
                     <Route path='/tunings/' component={PageShell(PageDetailView)} />
                     <Route path='/error' component={PageShell(TuningsView)} />
-                    <Route component={PageShell(TuningsView)}/>
+                    <Route exact path='/tunings/**' component={PageShell(TuningsView)} />
                 </Switch>
             </BrowserRouter>
         );
