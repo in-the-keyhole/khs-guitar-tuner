@@ -21,12 +21,9 @@ import React from 'react';
 import PageHeader from './header.jsx';
 import '../css/index.css';
 import '../css/materialize.min.css';
-import { NavLink, browserHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class AboutView extends React.Component{
-	componentWillUnmount(){
-		browserHistory.push('/');
-	}
     render(){
         return(
             <div className="about-view">
