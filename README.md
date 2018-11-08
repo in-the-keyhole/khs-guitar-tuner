@@ -16,7 +16,7 @@ Installing and Running Locally
 4. Download PostgreSQL
 5. Install everything with the default settings
 6. Open up PG Admin 4
-7. Click on "Severs"
+7. Click on "Servers"
 8. Click on "Databases" then "postgres"
 9. Click on "Schema"
 10. Right-Click on "Tables" and click "create" and name it "tunings"
