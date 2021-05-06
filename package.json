@@ -14,7 +14,7 @@
     "react-router-page-transition": "^3.1.0",
     "react-scripts": "latest",
     "react-sound": "^1.2.0",
-    "handlebars": "^4.5.3"
+    "handlebars": "^4.7.7"
   },
   "scripts": {
     "start": "react-scripts start",
