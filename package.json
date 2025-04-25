@@ -10,7 +10,7 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "latest",
     "react-materialize": "^2.3.1",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^7.5.2",
     "react-router-page-transition": "^3.1.0",
     "react-scripts": "latest",
     "react-sound": "^1.2.0",
